@@ -29,7 +29,7 @@ flink:
 rheos:
   registry-url: https://rheos-services.stratus.ebay.com
   client:
-    id: "urn:ebay-marketplace-consumerid:68a97ac2-013b-4915-9ed7-d6ae2ff01618"
+    id:
     iaf:
-      secret: c4bb6fca-7ac5-46dd-b218-a49cb6307dbc
+      secret: 
       env: production
