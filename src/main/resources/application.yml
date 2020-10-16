@@ -31,5 +31,5 @@ rheos:
   client:
     id:
     iaf:
-      secret: 
+      secret:
       env: production

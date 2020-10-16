@@ -1,6 +1,8 @@
 package pipeline;
 
+import static utils.DataCenter.LVS;
 import static utils.DataCenter.RNO;
+import static utils.DataCenter.SLC;
 
 import connectors.hdfs.HdfsConnectorFactory;
 import connectors.kafka.SourceDataStreamBuilder;
@@ -24,7 +26,14 @@ public class SojournerKafkaToHdfsJob {
         executionEnvironment, deserializeClass
     );
 
-    DataStream sourceDataStream = dataStreamBuilder.buildOfDC(RNO);
+    DataStream sourceDataStreamForRNO = dataStreamBuilder.buildOfDC(RNO);
+    DataStream sourceDataStreamForLVS = dataStreamBuilder.buildOfDC(LVS);
+    DataStream sourceDataStreamForSLC = dataStreamBuilder.buildOfDC(SLC);
+
+    // union all dc traffic
+    DataStream sourceDataStream = sourceDataStreamForLVS
+        .union(sourceDataStreamForSLC)
+        .union(sourceDataStreamForRNO);
 
     // hdfs sink
     sourceDataStream

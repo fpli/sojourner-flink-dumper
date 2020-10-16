@@ -4,6 +4,7 @@ import static utils.Property.KAFKA_CONSUMER_BOOTSTRAP_SERVERS;
 
 import env.FlinkEnvUtils;
 import java.util.Properties;
+import org.apache.kafka.common.config.SaslConfigs;
 import org.apache.kafka.common.config.SslConfigs;
 import utils.DataCenter;
 import utils.Property;
@@ -24,7 +25,7 @@ public class KafkaConnectorFactory {
             FlinkEnvUtils.getString(Property.RHEOS_CLIENT_IAF_SECRET),
             FlinkEnvUtils.getString(Property.RHEOS_CLIENT_IAF_ENV));
 
-    // props.put(SaslConfigs.SASL_JAAS_CONFIG, saslJaasConfig);
+    props.put(SaslConfigs.SASL_JAAS_CONFIG, saslJaasConfig);
     props.put(SslConfigs.SSL_ENDPOINT_IDENTIFICATION_ALGORITHM_CONFIG, "");
     return props;
   }
