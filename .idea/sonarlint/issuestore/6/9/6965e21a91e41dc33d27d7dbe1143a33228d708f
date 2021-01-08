@@ -1,0 +1,4 @@
+
+xsquid:S1450"aRemove the "flinkKafkaConsumer" field and declare it as a local variable in the relevant methods.(è‘£Ù
+Qsquid:S1118
+":Add a private constructor to hide the implicit public one.(æ°Ø
