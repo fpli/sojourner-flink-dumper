@@ -7,6 +7,12 @@ kafka:
         - rhs-vsrvkiaa-kfk-lvs-3.rheos-streaming-qa.svc.32.tess.io:9092
         - rhs-vsrvkiaa-kfk-lvs-4.rheos-streaming-qa.svc.32.tess.io:9092
         - rhs-vsrvkiaa-kfk-lvs-5.rheos-streaming-qa.svc.32.tess.io:9092
+      slc:
+        - rhs-mhnaniaa-kfk-1.rheos-streaming-qa.stratus.qa.ebay.com:9092
+        - rhs-mhnaniaa-kfk-2.rheos-streaming-qa.stratus.qa.ebay.com:9092
+        - rhs-mhnaniaa-kfk-3.rheos-streaming-qa.stratus.qa.ebay.com:9092
+        - rhs-mhnaniaa-kfk-4.rheos-streaming-qa.stratus.qa.ebay.com:9092
+        - rhs-mhnaniaa-kfk-5.rheos-streaming-qa.stratus.qa.ebay.com:9092
 
     max-poll-records: 1000
     # 16MB, default value is 50MB
@@ -29,9 +35,9 @@ flink:
 rheos:
   registry-url: https://rheos-services.qa.ebay.com
   client:
-    id:
+    id: "urn:ebay-marketplace-consumerid:68a97ac2-013b-4915-9ed7-d6ae2ff01618"
     iaf:
-      secret:
+      secret: 6218c197-200e-49d7-b404-2a4dbf7595ef
       env: staging
 
 hdfs:
