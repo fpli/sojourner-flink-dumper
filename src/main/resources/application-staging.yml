@@ -1,0 +1,40 @@
+kafka:
+  consumer:
+    bootstrap-servers:
+      lvs:
+        - rhs-vsrvkiaa-kfk-lvs-1.rheos-streaming-qa.svc.32.tess.io:9092
+        - rhs-vsrvkiaa-kfk-lvs-2.rheos-streaming-qa.svc.32.tess.io:9092
+        - rhs-vsrvkiaa-kfk-lvs-3.rheos-streaming-qa.svc.32.tess.io:9092
+        - rhs-vsrvkiaa-kfk-lvs-4.rheos-streaming-qa.svc.32.tess.io:9092
+        - rhs-vsrvkiaa-kfk-lvs-5.rheos-streaming-qa.svc.32.tess.io:9092
+
+    max-poll-records: 1000
+    # 16MB, default value is 50MB
+    fetch-max-bytes: 16777216
+    # 128KB, default value is 64KB
+    receive-buffer: 65536
+    fetch-max-wait-ms: 100
+    # 4MB, default value is 1MB
+    max-partitions-fetch-bytes: 1048576
+    auto-offset-reset: latest
+
+flink:
+  app:
+    name: Sojourner QA Misc HDFS Load Pipeline
+    parallelism:
+      source: 3
+      sink:
+        hdfs: 3
+
+rheos:
+  registry-url: https://rheos-services.qa.ebay.com
+  client:
+    id:
+    iaf:
+      secret:
+      env: staging
+
+hdfs:
+  dump:
+    path: hdfs://zeus/user/o_ubi/soj/ubd/misc_test/
+    class-name: model.MiscEvent
