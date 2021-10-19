@@ -26,7 +26,7 @@ public class SojournerKafkaToHdfsJobForQA {
         executionEnvironment, deserializeClass
     );
 
-    DataStream sourceDataStream = dataStreamBuilder.buildOfDC(SLC);
+    DataStream sourceDataStream = dataStreamBuilder.buildOfDC(LVS);
 
     // hdfs sink
     sourceDataStream
