@@ -1,7 +1,5 @@
 package pipeline;
 
-import static utils.DataCenter.LVS;
-import static utils.DataCenter.RNO;
 import static utils.DataCenter.SLC;
 
 import connectors.hdfs.HdfsConnectorFactory;
@@ -26,7 +24,7 @@ public class SojournerKafkaToHdfsJobForQA {
         executionEnvironment, deserializeClass
     );
 
-    DataStream sourceDataStream = dataStreamBuilder.buildOfDC(LVS);
+    DataStream sourceDataStream = dataStreamBuilder.buildOfDC(SLC);
 
     // hdfs sink
     sourceDataStream
