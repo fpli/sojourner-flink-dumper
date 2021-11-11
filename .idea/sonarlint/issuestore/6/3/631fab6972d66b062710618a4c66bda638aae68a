@@ -1,5 +1,0 @@
-
-ksquid:CallToDeprecatedMethod#"<Remove this use of "disableSysoutLogging"; it is deprecated.(´Š·Â8ãÝ×Ó.
-©%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(îü±òÿÿÿÿÿ8ãÝ×Ó.
-Vsquid:S1118":Add a private constructor to hide the implicit public one.(”Ø³áÿÿÿÿÿ
-csquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(îü±òÿÿÿÿÿ
