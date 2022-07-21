@@ -2,6 +2,7 @@ package connectors.kafka;
 
 import org.apache.flink.streaming.api.functions.timestamps.BoundedOutOfOrdernessTimestampExtractor;
 import org.apache.flink.streaming.api.windowing.time.Time;
+import utils.TimestampFieldExtractor;
 
 public class SojBoundedOutOfOrderlessTimestampExtractor<T> extends
     BoundedOutOfOrdernessTimestampExtractor<T> {

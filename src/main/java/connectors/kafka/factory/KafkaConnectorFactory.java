@@ -1,7 +1,8 @@
-package connectors.kafka;
+package connectors.kafka.factory;
 
 import static utils.Property.KAFKA_CONSUMER_BOOTSTRAP_SERVERS;
 
+import connectors.kafka.config.KafkaConsumerConfig;
 import env.FlinkEnvUtils;
 import java.util.Properties;
 import org.apache.kafka.common.config.SaslConfigs;
@@ -27,6 +28,25 @@ public class KafkaConnectorFactory {
 
     props.put(SaslConfigs.SASL_JAAS_CONFIG, saslJaasConfig);
     props.put(SslConfigs.SSL_ENDPOINT_IDENTIFICATION_ALGORITHM_CONFIG, "");
+    return props;
+  }
+
+  public static Properties getKafkaCommonConfigPlainText() {
+    Properties props = new Properties();
+    props.put("sasl.mechanism", "IAF");
+    props.put("security.protocol", "SASL_PLAINTEXT");
+//    props.put("security.protocol", "SASL_SSL");
+
+    final String saslJaasConfig =
+            String.format(
+                    "io.ebay.rheos.kafka.security.iaf.IAFLoginModule required iafConsumerId="
+                            + "\"urn:ebay-marketplace-consumerid:68a97ac2-013b-4915-9ed7-d6ae2ff01618\" "
+                            + "iafSecret=\"%s\" iafEnv=\"%s\";",
+                    FlinkEnvUtils.getString(Property.RHEOS_CLIENT_IAF_SECRET),
+                    FlinkEnvUtils.getString(Property.RHEOS_CLIENT_IAF_ENV));
+
+    props.put(SaslConfigs.SASL_JAAS_CONFIG, saslJaasConfig);
+//    props.put(SslConfigs.SSL_ENDPOINT_IDENTIFICATION_ALGORITHM_CONFIG, "");
     return props;
   }
 

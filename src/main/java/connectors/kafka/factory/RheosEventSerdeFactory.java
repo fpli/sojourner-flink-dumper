@@ -1,4 +1,4 @@
-package connectors.kafka;
+package connectors.kafka.factory;
 
 import env.FlinkEnvUtils;
 import io.ebay.rheos.kafka.client.StreamConnectorConfig;

@@ -1,5 +1,8 @@
 package connectors.kafka;
 
+import connectors.kafka.config.KafkaConsumerConfig;
+import connectors.kafka.factory.KafkaConnectorFactory;
+import connectors.kafka.factory.KafkaConsumerFactory;
 import env.FlinkEnvUtils;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +26,7 @@ public class SourceDataStreamBuilder<T> {
 
     KafkaConsumerConfig kafkaConsumerConfig = KafkaConnectorFactory.getKafkaConsumerConfig(dc);
     return environment
-        .addSource(KafkaSourceFunction.buildSource(kafkaConsumerConfig, tClass))
+        .addSource(KafkaConsumerFactory.getConsumer(kafkaConsumerConfig, tClass))
         .setParallelism(FlinkEnvUtils.getInteger(Property.SOURCE_PARALLELISM))
         .slotSharingGroup(slotGroup)
         .name(String.format("Rheos Kafka Consumer From DC: %s, Topic: %s",

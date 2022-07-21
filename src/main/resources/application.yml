@@ -47,17 +47,20 @@ flink:
       min-pause-between-ms: 120000
       max-concurrent: 1
       tolerate-failure-number: 3
-
+    source:
+      from-timestamp: 0
+      out-of-orderless-in-min: 3
+      idle-source-timeout-in-min: 10
 rheos:
 #  registry-url: https://rheos-services.stratus.ebay.com
-  registry-url: https://rheos-services.qa.ebay.com
+  registry-url: https://rheos-services.stratus.ebay.com
   client:
-    id:
+    id: "urn:ebay-marketplace-consumerid:68a97ac2-013b-4915-9ed7-d6ae2ff01618"
     iaf:
-      secret:
+      secret: c4bb6fca-7ac5-46dd-b218-a49cb6307dbc
       env: production
 
 hdfs:
   dump:
-    path: hdfs://apollo-rno/sys/soj/ubd/misc_test/
+    path: hdfs://apollo-router/sys/soj/ubd/misc_test/
     class-name: model.MiscEvent

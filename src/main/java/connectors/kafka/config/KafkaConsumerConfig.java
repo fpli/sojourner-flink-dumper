@@ -1,4 +1,4 @@
-package connectors.kafka;
+package connectors.kafka.config;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,6 +1,6 @@
 package connectors.kafka.schema;
 
-import connectors.kafka.RheosEventSerdeFactory;
+import connectors.kafka.factory.RheosEventSerdeFactory;
 import io.ebay.rheos.schema.event.RheosEvent;
 import java.io.IOException;
 import model.MiscEvent;
