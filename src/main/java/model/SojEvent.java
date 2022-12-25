@@ -11,6 +11,7 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
+@Deprecated
 public class SojEvent {
 
   private final long eventCreateTimestamp;

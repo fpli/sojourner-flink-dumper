@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "SessionizedEvent",
-  "namespace": "com.ebay.epic.common.model",
+  "namespace": "com.ebay.epic.sojourner.common.model",
   "fields": [
     {
       "name": "rheosHeader",
@@ -44,17 +44,6 @@
     },
     {
       "name": "guid",
-      "type": [
-        "null",
-        {
-          "type": "string",
-          "avro.java.string": "String"
-        }
-      ],
-      "default": null
-    },
-    {
-      "name": "globalSessionId",
       "type": [
         "null",
         {

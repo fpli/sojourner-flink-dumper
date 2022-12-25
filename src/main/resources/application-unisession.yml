@@ -1,15 +1,16 @@
 kafka:
   consumer:
-    stream: behavior.pathfinder
-    topic: behavior.total.new.unisession
-    group-id: uni-sess-dumper-poc
+    stream: behavior.unified.sojourner.nonbot
+    topic:
+      - behavior.unified.sojourner.nonbot.unisession-rno
+    group-id: unified-session-dumper
     bootstrap-servers:
       rno:
-        - rhs-pbuvkiaa-kfk-rno-1.rheos-streaming-prod.svc.26.tess.io:9092
-        - rhs-pbuvkiaa-kfk-rno-2.rheos-streaming-prod.svc.26.tess.io:9092
-        - rhs-pbuvkiaa-kfk-rno-3.rheos-streaming-prod.svc.26.tess.io:9092
-        - rhs-pbuvkiaa-kfk-rno-4.rheos-streaming-prod.svc.26.tess.io:9092
-        - rhs-pbuvkiaa-kfk-rno-5.rheos-streaming-prod.svc.26.tess.io:9092
+        - rhs-ddcwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ddcwkiaa-kfk-2.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ddcwkiaa-kfk-3.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ddcwkiaa-kfk-4.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ddcwkiaa-kfk-5.rheos-streaming-prod.vip.ebay.com:9092
     max-poll-records: 3000
     # 16MB, default value is 50MB
     fetch-max-bytes: 16777216
@@ -19,14 +20,31 @@ kafka:
     # 4MB, default value is 1MB
     max-partitions-fetch-bytes: 4194304
     auto-offset-reset: latest
-
+    partition-discovery-interval-ms: 60000
 flink:
   app:
     name: Unified Sessionization UniSession HDFS Load Pipeline
     parallelism:
-      source: 10
+      source: 50
+      process: 50
       sink:
-        hdfs: 10
+        hdfs:
+          watermark: 20
+          open: 50
+          sameday: 50
+          crossday: 50
+    operator-name:
+      source: consumer operator
+      process: process operator
+      sink: sink operator
+    uid:
+      source: consumer-operator
+      process: process-operator
+      sink: sink-operator
+    slot-sharing-group:
+      source: consumer-group
+      process: process-group
+      sink: sink-group
     checkpoint:
       data-dir: /opt/sojourner-ubd/checkpoint
       interval-ms: 300000
@@ -45,5 +63,8 @@ rheos:
 
 hdfs:
   dump:
-    path: hdfs://apollo-router/sys/soj/ubd/uni-sess-unisession/
-    class-name: model.UniSession
+    path:
+      open: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unified_session_dump_w/category=open
+      sameday: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unified_session_dump_w/category=sameday
+      crossday: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unified_session_dump_w/category=crossday
+      watermark: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unisession_watermark_w

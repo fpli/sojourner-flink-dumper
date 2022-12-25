@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
+@Deprecated
 public class AutoTrackEvent {
 
   private final long eventCreateTimestamp;

@@ -3,6 +3,7 @@ package model;
 import lombok.Data;
 
 @Data
+@Deprecated
 public class Trackable {
     private String trackableId;
     private String parentTrackableId;

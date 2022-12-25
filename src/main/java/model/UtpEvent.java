@@ -7,6 +7,7 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
+@Deprecated
 public class UtpEvent {
     private final long eventCreateTimestamp;
     private final String guid;

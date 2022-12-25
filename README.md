@@ -1,2 +1,2 @@
 # sojourner-mobile-event
-Sojourner Mobile Event Dumper
+Sojourner Flink Dumper

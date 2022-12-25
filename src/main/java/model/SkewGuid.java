@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
+@Deprecated
 public class SkewGuid {
 
   private long eventCreateTimestamp;
