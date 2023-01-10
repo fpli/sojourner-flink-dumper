@@ -44,10 +44,10 @@ flink:
       process: 20
       sink:
         hdfs:
-          watermark: 20
-          open: 50
-          sameday: 50
-          crossday: 50
+          watermark_nonbot: 20
+          open_nonbot: 50
+          sameday_nonbot: 50
+          crossday_nonbot: 50
     operator-name:
       source: consumer operator
       process: process operator

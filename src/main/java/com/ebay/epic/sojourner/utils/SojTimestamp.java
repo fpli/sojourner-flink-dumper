@@ -7,6 +7,7 @@ import org.joda.time.format.DateTimeFormatter;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -144,4 +145,5 @@ public class SojTimestamp {
       throw new RuntimeException("normalized timestamp failed", e);
     }
   }
+
 }

@@ -53,10 +53,8 @@ public class ExtractWatermarkProcessFunction<T> extends ProcessFunction<T, SojWa
             Long sessionStartDt = System.currentTimeMillis();
 
             try {
-                sessionEndTimestamp = SojTimestamp
-                        .getSojTimestampToUnixTimestamp(uniSession.getAbsEndTimestamp());
-                sessionStartDt = SojTimestamp
-                        .getSojTimestampToUnixTimestamp(uniSession.getSessionStartDt());
+                sessionEndTimestamp = uniSession.getAbsEndTimestamp();
+                sessionStartDt = uniSession.getSessionStartDt();
             } catch (Exception e) {
                 log.warn("session end time is null: " + sessionEndTimestamp);
                 log.warn("session start time is null: " + sessionStartDt);
@@ -84,4 +82,5 @@ public class ExtractWatermarkProcessFunction<T> extends ProcessFunction<T, SojWa
             return DEFAULT_DATE;
         }
     }
+
 }

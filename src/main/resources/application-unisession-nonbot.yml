@@ -29,10 +29,10 @@ flink:
       process: 50
       sink:
         hdfs:
-          watermark: 20
-          open: 50
-          sameday: 50
-          crossday: 50
+          watermark_nonbot: 20
+          open_nonbot: 50
+          sameday_nonbot: 50
+          crossday_nonbot: 50
     operator-name:
       source: consumer operator
       process: process operator
@@ -64,7 +64,7 @@ rheos:
 hdfs:
   dump:
     path:
-      open: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unified_session_dump_w/category=open
-      sameday: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unified_session_dump_w/category=sameday
-      crossday: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unified_session_dump_w/category=crossday
-      watermark: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unisession_watermark_w
+      open_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unified_session_dump_w/category=open/type=nonbot
+      sameday_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unified_session_dump_w/category=sameday/type=nonbot
+      crossday_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unified_session_dump_w/category=crossday/type=nonbot
+      watermark_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unisession_watermark_w/type=nonbot

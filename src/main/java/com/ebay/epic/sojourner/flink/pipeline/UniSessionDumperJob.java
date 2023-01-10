@@ -28,10 +28,10 @@ public class UniSessionDumperJob extends KafkaToHdfsBaseJob{
         DataStream<UniSession> sameDayDataStream = sojWatermarkDataStream.getSideOutput(OutputTagConstants.sameDaySessionOutputTag);
         DataStream<UniSession> crossDayDataStream = sojWatermarkDataStream.getSideOutput(OutputTagConstants.crossDaySessionOutputTag);
         DataStream<UniSession> openDataStream = sojWatermarkDataStream.getSideOutput(OutputTagConstants.openSessionOutputTag);
-        uniSessionDumperJob.hdfsSinkBuilder(sojWatermarkDataStream, SessionType.WATERMARK);
-        uniSessionDumperJob.hdfsSinkBuilder(openDataStream, SessionType.OPEN);
-        uniSessionDumperJob.hdfsSinkBuilder(sameDayDataStream, SessionType.SAMEDAY);
-        uniSessionDumperJob.hdfsSinkBuilder(crossDayDataStream, SessionType.CROSSDAY);
+        uniSessionDumperJob.hdfsSinkBuilder(sojWatermarkDataStream, SessionType.WATERMARK_NONBOT);
+        uniSessionDumperJob.hdfsSinkBuilder(openDataStream, SessionType.OPEN_NONBOT);
+        uniSessionDumperJob.hdfsSinkBuilder(sameDayDataStream, SessionType.SAMEDAY_NONBOT);
+        uniSessionDumperJob.hdfsSinkBuilder(crossDayDataStream, SessionType.CROSSDAY_NONBOT);
         FlinkEnvUtils.execute(see, getString(Property.FLINK_APP_NAME));
     }
 }
