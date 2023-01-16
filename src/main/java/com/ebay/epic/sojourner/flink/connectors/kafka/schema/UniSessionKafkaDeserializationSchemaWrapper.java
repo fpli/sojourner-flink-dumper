@@ -9,10 +9,10 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 public class UniSessionKafkaDeserializationSchemaWrapper implements
         KafkaDeserializationSchema<UniSession> {
 
-    private final UniSessionDeserializationSchema rawEventDeserializationSchema;
+    private final AvroDeSerSchema<UniSession> rawEventDeserializationSchema;
 
     public UniSessionKafkaDeserializationSchemaWrapper(
-            UniSessionDeserializationSchema rawEventDeserializationSchema) {
+            AvroDeSerSchema rawEventDeserializationSchema) {
         this.rawEventDeserializationSchema = rawEventDeserializationSchema;
     }
 

@@ -146,4 +146,7 @@ public class SojTimestamp {
     }
   }
 
+  public static void main(String[] args) {
+    System.out.println(DataCenter.valueOf("RNO"));
+  }
 }

@@ -64,6 +64,7 @@ public class Property {
     public static final String FLINK_APP_SOURCE_FROM_TS_BASE="flink.app.source.from-timestamp";
     public static final String FLINK_APP_SOURCE_OFO_BASE="flink.app.source.out-of-orderless-in-min";
     public static final String FLINK_APP_SOURCE_TIM_BASE="flink.app.source.idle-source-timeout-in-min";
+    public static final String FLINK_APP_SOURCE_DC_BASE="flink.app.source.dc";
 
     // flink checkpoint
     public static final String CHECKPOINT_DATA_DIR = "flink.app.checkpoint.data-dir";
@@ -78,6 +79,11 @@ public class Property {
     public static final String SOURCE_PARALLELISM = "flink.app.parallelism.source";
     public static final String PROCESS_PARALLELISM = "flink.app.parallelism.process";
     public static final String SINK_HDFS_PARALLELISM = "flink.app.parallelism.sink.hdfs";
+    public static final String MAX_PARALLELISM = "flink.app.parallelism.max";
+
+    //sink
+    public static final String FLINK_APP_SINK_EVENTTYPE_BASE="flink.app.sink.eventtype";
+    public static final String FLINK_APP_SINK_WATERMARK_BASE="flink.app.sink.watermark";
     // ----- flink - operator name and uid------
 
     // -----operator name-------

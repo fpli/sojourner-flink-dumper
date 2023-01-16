@@ -19,7 +19,7 @@ public class DeserializationSchemaManager {
         deserializationSchemaMap.put(UtpEvent.class, new UtpEventDeserializationSchema());
         deserializationSchemaMap.put(SojEvent.class, new SojEventDeserializationSchema());
         deserializationSchemaMap.put(AutoTrackEvent.class, new AutoTrackEventDeserializationSchema());
-        deserializationSchemaMap.put(UniSession.class, new UniSessionDeserializationSchema());
+        deserializationSchemaMap.put(UniSession.class, new AvroDeSerSchema(UniSession.class));
     }
 
     public static <T> KafkaDeserializationSchema<T> getSchema(Class<T> clazz) {

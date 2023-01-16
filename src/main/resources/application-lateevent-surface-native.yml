@@ -1,0 +1,69 @@
+kafka:
+  consumer:
+    stream: behavior.unified.surface
+    topic:
+      - behavior.unified.surface.late.event.native-rno
+      - behavior.unified.surface.late.event.native-lvs
+    group-id: unified-lateevent-surface-dumper
+    bootstrap-servers:
+      rno:
+        - rhs-xfcwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-xfcwkiaa-kfk-2.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-xfcwkiaa-kfk-3.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-xfcwkiaa-kfk-4.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-xfcwkiaa-kfk-5.rheos-streaming-prod.vip.ebay.com:9092
+      lvs:
+        - rhs-ufcwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ufcwkiaa-kfk-2.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ufcwkiaa-kfk-3.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ufcwkiaa-kfk-4.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ufcwkiaa-kfk-5.rheos-streaming-prod.vip.ebay.com:9092
+    max-poll-records: 3000
+    # 16MB, default value is 50MB
+    fetch-max-bytes: 16777216
+    # 128KB, default value is 64KB
+    receive-buffer: 131072
+    fetch-max-wait-ms: 100
+    # 4MB, default value is 1MB
+    max-partitions-fetch-bytes: 4194304
+    auto-offset-reset: latest
+    partition-discovery-interval-ms: 60000
+flink:
+  app:
+    name: Unified Sessionization Lateevent Surface Native HDFS Load Pipeline
+    parallelism:
+      source: 50
+      process: 50
+      sink:
+        hdfs:
+          watermark_nonbot: 20
+          surface_native_nonbot: 50
+    operator-name:
+      source: consumer operator
+      process: process operator
+      sink: sink operator
+    uid:
+      source: consumer-operator
+      process: process-operator
+      sink: sink-operator
+    slot-sharing-group:
+      source: consumer-group
+      process: process-group
+      sink: sink-group
+    metric:
+      watermark-process-progress: surface-lateevent-native-watermark-delay-time
+    checkpoint:
+      data-dir: /opt/sojourner-ubd/checkpoint
+      interval-ms: 300000
+      timeout-ms: 900000
+      min-pause-between-ms: 120000
+      max-concurrent: 1
+      tolerate-failure-number: 3
+    sink:
+      eventtype: surface_native_nonbot
+      watermark: watermark_nonbot
+hdfs:
+  dump:
+    path:
+      surface_native_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_late_surface_native_dump_w/type=nonbot
+      watermark_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_late_surface_native_watermark_w/type=nonbot

@@ -1,5 +1,6 @@
 package com.ebay.epic.sojourner.flink.pipeline;
 
+import com.ebay.epic.sojourner.common.constant.EventType;
 import com.ebay.epic.sojourner.common.constant.SessionType;
 import com.ebay.epic.sojourner.common.env.FlinkEnvUtils;
 import com.ebay.epic.sojourner.common.model.SojWatermark;
@@ -12,7 +13,10 @@ import com.ebay.epic.sojourner.utils.Property;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.streaming.api.functions.ProcessFunction;
 import org.apache.flink.streaming.connectors.kafka.KafkaDeserializationSchema;
+
+import java.awt.*;
 
 import static com.ebay.epic.sojourner.common.env.FlinkEnvUtils.getString;
 import static com.ebay.epic.sojourner.utils.Property.*;
@@ -45,7 +49,8 @@ public class KafkaToHdfsBaseJob {
         return rawEventDataStream;
     }
 
-    public <IN> SingleOutputStreamOperator<SojWatermark> processFunctionBuilder(DataStream<IN> dataStream) {
+    public <IN> SingleOutputStreamOperator<SojWatermark> processFunctionBuilder(
+            DataStream<IN> dataStream, ProcessFunction<IN, SojWatermark> processFunction) {
         ProcessFunctionBuilder<IN,SojWatermark> processFunctionBuilder =
                 new ProcessFunctionBuilder<>(dataStream, false);
 
@@ -55,7 +60,7 @@ public class KafkaToHdfsBaseJob {
                 .uid(PPROCESS_UID)
                 .slotGroup(PROCESS_SLOT_SHARE_GROUP)
                 .parallelism(PROCESS_PARALLELISM)
-                .process(new ExtractWatermarkProcessFunction<>(getString(Property.FLINK_APP_METRIC_NAME)))
+                .process(processFunction )
                 .build();
         return processDS;
     }
@@ -63,6 +68,18 @@ public class KafkaToHdfsBaseJob {
     public <T> void hdfsSinkBuilder(DataStream<T> dataStream, SessionType sessionType) {
         FlinkKafkaSinkBuilder<T> flinkKafkaSinkBuilder =
                 new FlinkKafkaSinkBuilder<>(dataStream, sessionType);
+        flinkKafkaSinkBuilder
+                .parallelism(SINK_HDFS_PARALLELISM)
+                .operatorName(SINK_OPERATOR_NAME_BASE)
+                .uid(SINK_UID_BASE)
+                .slotGroup(SINK_SLOT_SHARE_GROUP_BASE)
+                .path(HDFS_DUMP_PATH)
+                .build();
+    }
+
+    public <T> void hdfsSinkBuilder(DataStream<T> dataStream, EventType eventType) {
+        FlinkKafkaSinkBuilder<T> flinkKafkaSinkBuilder =
+                new FlinkKafkaSinkBuilder<>(dataStream, eventType);
         flinkKafkaSinkBuilder
                 .parallelism(SINK_HDFS_PARALLELISM)
                 .operatorName(SINK_OPERATOR_NAME_BASE)

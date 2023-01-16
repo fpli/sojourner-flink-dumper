@@ -1,6 +1,5 @@
 package com.ebay.epic.sojourner.flink.connectors.kafka.schema;
 
-import com.ebay.epic.sojourner.common.model.UniSession;
 import org.apache.avro.io.DatumReader;
 import org.apache.avro.io.Decoder;
 import org.apache.avro.io.DecoderFactory;
@@ -10,14 +9,18 @@ import org.apache.flink.api.common.typeinfo.TypeInformation;
 
 import java.io.IOException;
 
-public class UniSessionDeserializationSchema implements DeserializationSchema<UniSession> {
+public class AvroDeSerSchema<T> implements DeserializationSchema<T> {
 
-    private transient DatumReader<UniSession> reader;
+    private transient DatumReader<T> reader;
+    private Class<T> tClass;
 
+    public AvroDeSerSchema(Class<T> tClass){
+        this.tClass=tClass;
+    }
     @Override
-    public UniSession deserialize(byte[] message) throws IOException {
+    public T deserialize(byte[] message) throws IOException {
         if (reader == null) {
-            reader = new SpecificDatumReader<>(UniSession.class);
+            reader = new SpecificDatumReader<>(tClass);
         }
         Decoder decoder = null;
         try {
@@ -29,12 +32,12 @@ public class UniSessionDeserializationSchema implements DeserializationSchema<Un
     }
 
     @Override
-    public boolean isEndOfStream(UniSession nextElement) {
+    public boolean isEndOfStream(T nextElement) {
         return false;
     }
 
     @Override
-    public TypeInformation<UniSession> getProducedType() {
-        return TypeInformation.of(UniSession.class);
+    public TypeInformation<T> getProducedType() {
+        return TypeInformation.of(tClass);
     }
 }

@@ -33,8 +33,8 @@ public class ConfigManager {
         return getString(baseName);
     }
 
-    public String getPath(String baseName,SessionType sessionType) {
-        return getString(String.join(DEL_POINT,baseName,sessionType.name().toLowerCase()));
+    public String getPath(String baseName,String name) {
+        return getString(String.join(DEL_POINT,baseName,name));
     }
 
     public String getBrokers(String baseName) {

@@ -39,6 +39,7 @@ flink:
   app:
     name: Sojourner Misc HDFS Load Pipeline
     parallelism:
+      max: 2400
       default: 100
       source: 20
       process: 20
@@ -73,6 +74,9 @@ flink:
       from-timestamp: 0
       out-of-orderless-in-min: 0
       idle-source-timeout-in-min: 10
+      dc: rno
+    sink:
+      eventtype: surface_web_nonbot
 rheos:
   #  registry-url: https://rheos-services.stratus.ebay.com
   registry-url: https://rheos-services.stratus.ebay.com
