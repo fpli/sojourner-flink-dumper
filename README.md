@@ -1,2 +1,2 @@
 # sojourner-mobile-event
-Sojourner Mobile Event Dumper
+Sojourner Dumper component to integrate all the topics and populate into hadoop. 
