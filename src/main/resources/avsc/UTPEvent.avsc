@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "UTPEvent",
-  "namespace": "com.ebay.epic.common.model",
+  "namespace": "com.ebay.epic.sojourner.common.model",
   "doc": " Unified tracking topic schema",
   "fields": [
     {
@@ -115,7 +115,6 @@
       ],
       "default": ""
     },
-
     {
       "name": "idfa",
       "type": [
@@ -327,14 +326,6 @@
         "type": "map",
         "values": "string"
       }
-    },
-    {
-      "name": "globalSessionId",
-      "type": [
-        "null",
-        "string"
-      ],
-      "default": ""
     }
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "type": "record",
+  "name": "SojWatermark",
+  "namespace": "com.ebay.epic.sojourner.common.model",
+  "fields": [
+    {
+      "name": "watermark",
+      "type": [
+        "null",
+        "long"
+      ],
+      "doc": "unified session watermark"
+    },
+    {
+      "name": "subtaskIndex",
+      "type": [
+        "null",
+        "int"
+      ],
+      "doc": "subtask index"
+    }
+
+  ]
+}

@@ -1,0 +1,69 @@
+kafka:
+  consumer:
+    stream: behavior.unified.sojourner.bot
+    topic:
+      - behavior.unified.sojourner.bot.sojevent-rno
+      - behavior.unified.sojourner.bot.sojevent-lvs
+    group-id: unified-ubi-bot-dumper
+    bootstrap-servers:
+      rno:
+        - rhs-necwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-necwkiaa-kfk-2.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-necwkiaa-kfk-3.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-necwkiaa-kfk-4.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-necwkiaa-kfk-5.rheos-streaming-prod.vip.ebay.com:9092
+      lvs:
+        - rhs-kecwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-kecwkiaa-kfk-2.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-kecwkiaa-kfk-3.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-kecwkiaa-kfk-4.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-kecwkiaa-kfk-5.rheos-streaming-prod.vip.ebay.com:9092
+    max-poll-records: 3000
+    # 16MB, default value is 50MB
+    fetch-max-bytes: 16777216
+    # 128KB, default value is 64KB
+    receive-buffer: 131072
+    fetch-max-wait-ms: 100
+    # 4MB, default value is 1MB
+    max-partitions-fetch-bytes: 4194304
+    auto-offset-reset: latest
+    partition-discovery-interval-ms: 60000
+flink:
+  app:
+    name: Unified Sessionization Ubi Bot HDFS Load Pipeline
+    parallelism:
+      source: 200
+      process: 200
+      sink:
+        hdfs:
+          watermark_bot: 100
+          ubi_bot: 200
+    operator-name:
+      source: consumer operator
+      process: process operator
+      sink: sink operator
+    uid:
+      source: consumer-operator
+      process: process-operator
+      sink: sink-operator
+    slot-sharing-group:
+      source: consumer-group
+      process: process-group
+      sink: sink-group
+    metric:
+      watermark-process-progress: uni-ubi-bot-watermark-delay-time
+    checkpoint:
+      data-dir: /opt/sojourner-ubd/checkpoint
+      interval-ms: 300000
+      timeout-ms: 900000
+      min-pause-between-ms: 120000
+      max-concurrent: 1
+      tolerate-failure-number: 3
+    sink:
+      eventtype: ubi_bot
+      watermark: watermark_bot
+hdfs:
+  dump:
+    path:
+      ubi_bot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_uni_ubi_event_dump_w/type=bot
+      watermark_bot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_uni_ubi_event_watermark_w/type=bot

@@ -5,6 +5,7 @@ import lombok.Data;
 import java.util.Map;
 
 @Data
+@Deprecated
 public class Context {
     private String appId;
     private String version;

@@ -1,7 +1,8 @@
 kafka:
   consumer:
     stream: misc.ssl
-    topic: misc.ssl.validation
+    topic:
+      - misc.ssl.validation
     group-id: sojourner-misc-dumper
     bootstrap-servers:
       slc:
@@ -32,14 +33,26 @@ kafka:
     # 4MB, default value is 1MB
     max-partitions-fetch-bytes: 4194304
     auto-offset-reset: latest
+    partition-discovery-interval-ms: 60000
 
 flink:
   app:
     name: Sojourner Misc HDFS Load Pipeline
     parallelism:
+      max: 2400
+      default: 100
       source: 20
+      process: 20
       sink:
-        hdfs: 20
+        hdfs:
+          watermark_nonbot: 20
+          open_nonbot: 50
+          sameday_nonbot: 50
+          crossday_nonbot: 50
+    operator-name:
+      source: consumer operator
+      process: process operator
+      sink: sink operator
     checkpoint:
       data-dir: /opt/sojourner-ubd/checkpoint
       interval-ms: 300000
@@ -47,12 +60,25 @@ flink:
       min-pause-between-ms: 120000
       max-concurrent: 1
       tolerate-failure-number: 3
+    uid:
+      source: consumer-operator
+      process: process-operator
+      sink: sink-operator
+    slot-sharing-group:
+      source: consumer-group
+      process: process-group
+      sink: sink-group
+    metric:
+      watermark-process-progress: unified-session-watermark-delay-time
     source:
       from-timestamp: 0
-      out-of-orderless-in-min: 3
+      out-of-orderless-in-min: 0
       idle-source-timeout-in-min: 10
+      dc: rno
+    sink:
+      eventtype: surface_web_nonbot
 rheos:
-#  registry-url: https://rheos-services.stratus.ebay.com
+  #  registry-url: https://rheos-services.stratus.ebay.com
   registry-url: https://rheos-services.stratus.ebay.com
   client:
     id: "urn:ebay-marketplace-consumerid:68a97ac2-013b-4915-9ed7-d6ae2ff01618"

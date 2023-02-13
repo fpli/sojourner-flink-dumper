@@ -3,6 +3,7 @@ package model;
 import lombok.Data;
 
 @Data
+@Deprecated
 public class MobileDeviceContext {
     private FormFactor formFactor;
     private String manufacturer;

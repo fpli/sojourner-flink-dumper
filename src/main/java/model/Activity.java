@@ -5,6 +5,7 @@ import lombok.Data;
 import java.util.Map;
 
 @Data
+@Deprecated
 public class Activity {
     private long timestamp;
     private Long duration;
