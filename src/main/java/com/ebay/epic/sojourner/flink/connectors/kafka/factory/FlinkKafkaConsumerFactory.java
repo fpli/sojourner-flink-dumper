@@ -25,15 +25,15 @@ public class FlinkKafkaConsumerFactory {
                 deserializer,
                 configWrapper.getKafkaConsumerConfig().getProperties());
         if (configWrapper.getOutOfOrderlessInMin() > 0) {
-            log.error("if init timestampand watermarks:{}", configWrapper.getOutOfOrderlessInMin());
-            flinkKafkaConsumer.assignTimestampsAndWatermarks(
-                    WatermarkStrategy
-                            .<T>forBoundedOutOfOrderness(Duration.ofMinutes(configWrapper.getOutOfOrderlessInMin()))
-                            .withTimestampAssigner( new SojSerializableTimestampAssigner<>())
-                            .withIdleness(Duration.ofMinutes(configWrapper.getIdleSourceTimeout())));
+            log.warn("if init timestampand watermarks:{}", configWrapper.getOutOfOrderlessInMin());
         } else {
-            log.error("else init timestamp and watermarks:{}", configWrapper.getOutOfOrderlessInMin());
+            log.warn("else init timestamp and watermarks:{}", configWrapper.getOutOfOrderlessInMin());
         }
+        flinkKafkaConsumer.assignTimestampsAndWatermarks(
+                WatermarkStrategy
+                        .<T>forBoundedOutOfOrderness(Duration.ofMinutes(configWrapper.getOutOfOrderlessInMin()))
+                        .withTimestampAssigner(new SojSerializableTimestampAssigner<>())
+                        .withIdleness(Duration.ofMinutes(configWrapper.getIdleSourceTimeout())));
         String fromTimestamp = configWrapper.getFromTimestamp();
         if (fromTimestamp.equalsIgnoreCase("earliest")) {
             flinkKafkaConsumer.setStartFromEarliest();

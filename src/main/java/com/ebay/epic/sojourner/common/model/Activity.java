@@ -13,7 +13,7 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Activity extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 6222888764303614089L;
+  private static final long serialVersionUID = -4931388127629361349L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Activity\",\"namespace\":\"com.ebay.epic.sojourner.common.model\",\"fields\":[{\"name\":\"timestamp\",\"type\":\"long\"},{\"name\":\"duration\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"ratio\",\"type\":[\"null\",\"double\"],\"default\":null},{\"name\":\"viewportWidth\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"viewportHeight\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"category\",\"type\":{\"type\":\"enum\",\"name\":\"ActivityCategory\",\"symbols\":[\"Impression\",\"Click\"]}},{\"name\":\"type\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"referer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"details\",\"type\":[\"null\",{\"type\":\"map\",\"values\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"avro.java.string\":\"String\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
@@ -56,7 +56,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
   @Deprecated public java.lang.Double ratio;
   @Deprecated public java.lang.Long viewportWidth;
   @Deprecated public java.lang.Long viewportHeight;
-  @Deprecated public ActivityCategory category;
+  @Deprecated public com.ebay.epic.sojourner.common.model.ActivityCategory category;
   @Deprecated public java.lang.String type;
   @Deprecated public java.lang.String referer;
   @Deprecated public java.util.Map<java.lang.String,java.lang.String> details;
@@ -80,7 +80,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
    * @param referer The new value for referer
    * @param details The new value for details
    */
-  public Activity(java.lang.Long timestamp, java.lang.Long duration, java.lang.Double ratio, java.lang.Long viewportWidth, java.lang.Long viewportHeight, ActivityCategory category, java.lang.String type, java.lang.String referer, java.util.Map<java.lang.String,java.lang.String> details) {
+  public Activity(java.lang.Long timestamp, java.lang.Long duration, java.lang.Double ratio, java.lang.Long viewportWidth, java.lang.Long viewportHeight, com.ebay.epic.sojourner.common.model.ActivityCategory category, java.lang.String type, java.lang.String referer, java.util.Map<java.lang.String,java.lang.String> details) {
     this.timestamp = timestamp;
     this.duration = duration;
     this.ratio = ratio;
@@ -118,7 +118,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
     case 2: ratio = (java.lang.Double)value$; break;
     case 3: viewportWidth = (java.lang.Long)value$; break;
     case 4: viewportHeight = (java.lang.Long)value$; break;
-    case 5: category = (ActivityCategory)value$; break;
+    case 5: category = (com.ebay.epic.sojourner.common.model.ActivityCategory)value$; break;
     case 6: type = (java.lang.String)value$; break;
     case 7: referer = (java.lang.String)value$; break;
     case 8: details = (java.util.Map<java.lang.String,java.lang.String>)value$; break;
@@ -210,7 +210,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
    * Gets the value of the 'category' field.
    * @return The value of the 'category' field.
    */
-  public ActivityCategory getCategory() {
+  public com.ebay.epic.sojourner.common.model.ActivityCategory getCategory() {
     return category;
   }
 
@@ -218,7 +218,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
    * Sets the value of the 'category' field.
    * @param value the value to set.
    */
-  public void setCategory(ActivityCategory value) {
+  public void setCategory(com.ebay.epic.sojourner.common.model.ActivityCategory value) {
     this.category = value;
   }
 
@@ -274,8 +274,8 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
    * Creates a new Activity RecordBuilder.
    * @return A new Activity RecordBuilder
    */
-  public static Activity.Builder newBuilder() {
-    return new Activity.Builder();
+  public static com.ebay.epic.sojourner.common.model.Activity.Builder newBuilder() {
+    return new com.ebay.epic.sojourner.common.model.Activity.Builder();
   }
 
   /**
@@ -283,8 +283,8 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing builder to copy.
    * @return A new Activity RecordBuilder
    */
-  public static Activity.Builder newBuilder(Activity.Builder other) {
-    return new Activity.Builder(other);
+  public static com.ebay.epic.sojourner.common.model.Activity.Builder newBuilder(com.ebay.epic.sojourner.common.model.Activity.Builder other) {
+    return new com.ebay.epic.sojourner.common.model.Activity.Builder(other);
   }
 
   /**
@@ -292,8 +292,8 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
    * @param other The existing instance to copy.
    * @return A new Activity RecordBuilder
    */
-  public static Activity.Builder newBuilder(Activity other) {
-    return new Activity.Builder(other);
+  public static com.ebay.epic.sojourner.common.model.Activity.Builder newBuilder(com.ebay.epic.sojourner.common.model.Activity other) {
+    return new com.ebay.epic.sojourner.common.model.Activity.Builder(other);
   }
 
   /**
@@ -307,7 +307,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
     private java.lang.Double ratio;
     private java.lang.Long viewportWidth;
     private java.lang.Long viewportHeight;
-    private ActivityCategory category;
+    private com.ebay.epic.sojourner.common.model.ActivityCategory category;
     private java.lang.String type;
     private java.lang.String referer;
     private java.util.Map<java.lang.String,java.lang.String> details;
@@ -321,7 +321,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(Activity.Builder other) {
+    private Builder(com.ebay.epic.sojourner.common.model.Activity.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.timestamp)) {
         this.timestamp = data().deepCopy(fields()[0].schema(), other.timestamp);
@@ -365,7 +365,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
      * Creates a Builder by copying an existing Activity instance
      * @param other The existing instance to copy.
      */
-    private Builder(Activity other) {
+    private Builder(com.ebay.epic.sojourner.common.model.Activity other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.timestamp)) {
         this.timestamp = data().deepCopy(fields()[0].schema(), other.timestamp);
@@ -418,7 +418,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'timestamp'.
       * @return This builder.
       */
-    public Activity.Builder setTimestamp(long value) {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder setTimestamp(long value) {
       validate(fields()[0], value);
       this.timestamp = value;
       fieldSetFlags()[0] = true;
@@ -438,7 +438,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'timestamp' field.
       * @return This builder.
       */
-    public Activity.Builder clearTimestamp() {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder clearTimestamp() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -456,7 +456,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'duration'.
       * @return This builder.
       */
-    public Activity.Builder setDuration(java.lang.Long value) {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder setDuration(java.lang.Long value) {
       validate(fields()[1], value);
       this.duration = value;
       fieldSetFlags()[1] = true;
@@ -476,7 +476,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'duration' field.
       * @return This builder.
       */
-    public Activity.Builder clearDuration() {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder clearDuration() {
       duration = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -495,7 +495,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'ratio'.
       * @return This builder.
       */
-    public Activity.Builder setRatio(java.lang.Double value) {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder setRatio(java.lang.Double value) {
       validate(fields()[2], value);
       this.ratio = value;
       fieldSetFlags()[2] = true;
@@ -515,7 +515,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'ratio' field.
       * @return This builder.
       */
-    public Activity.Builder clearRatio() {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder clearRatio() {
       ratio = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -534,7 +534,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'viewportWidth'.
       * @return This builder.
       */
-    public Activity.Builder setViewportWidth(java.lang.Long value) {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder setViewportWidth(java.lang.Long value) {
       validate(fields()[3], value);
       this.viewportWidth = value;
       fieldSetFlags()[3] = true;
@@ -554,7 +554,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'viewportWidth' field.
       * @return This builder.
       */
-    public Activity.Builder clearViewportWidth() {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder clearViewportWidth() {
       viewportWidth = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -573,7 +573,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'viewportHeight'.
       * @return This builder.
       */
-    public Activity.Builder setViewportHeight(java.lang.Long value) {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder setViewportHeight(java.lang.Long value) {
       validate(fields()[4], value);
       this.viewportHeight = value;
       fieldSetFlags()[4] = true;
@@ -593,7 +593,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'viewportHeight' field.
       * @return This builder.
       */
-    public Activity.Builder clearViewportHeight() {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder clearViewportHeight() {
       viewportHeight = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -603,7 +603,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * Gets the value of the 'category' field.
       * @return The value.
       */
-    public ActivityCategory getCategory() {
+    public com.ebay.epic.sojourner.common.model.ActivityCategory getCategory() {
       return category;
     }
 
@@ -612,7 +612,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'category'.
       * @return This builder.
       */
-    public Activity.Builder setCategory(ActivityCategory value) {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder setCategory(com.ebay.epic.sojourner.common.model.ActivityCategory value) {
       validate(fields()[5], value);
       this.category = value;
       fieldSetFlags()[5] = true;
@@ -632,7 +632,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'category' field.
       * @return This builder.
       */
-    public Activity.Builder clearCategory() {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder clearCategory() {
       category = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -651,7 +651,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'type'.
       * @return This builder.
       */
-    public Activity.Builder setType(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder setType(java.lang.String value) {
       validate(fields()[6], value);
       this.type = value;
       fieldSetFlags()[6] = true;
@@ -671,7 +671,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'type' field.
       * @return This builder.
       */
-    public Activity.Builder clearType() {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder clearType() {
       type = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -690,7 +690,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'referer'.
       * @return This builder.
       */
-    public Activity.Builder setReferer(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder setReferer(java.lang.String value) {
       validate(fields()[7], value);
       this.referer = value;
       fieldSetFlags()[7] = true;
@@ -710,7 +710,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'referer' field.
       * @return This builder.
       */
-    public Activity.Builder clearReferer() {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder clearReferer() {
       referer = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -729,7 +729,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * @param value The value of 'details'.
       * @return This builder.
       */
-    public Activity.Builder setDetails(java.util.Map<java.lang.String,java.lang.String> value) {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder setDetails(java.util.Map<java.lang.String,java.lang.String> value) {
       validate(fields()[8], value);
       this.details = value;
       fieldSetFlags()[8] = true;
@@ -749,7 +749,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
       * Clears the value of the 'details' field.
       * @return This builder.
       */
-    public Activity.Builder clearDetails() {
+    public com.ebay.epic.sojourner.common.model.Activity.Builder clearDetails() {
       details = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -765,7 +765,7 @@ public class Activity extends org.apache.avro.specific.SpecificRecordBase implem
         record.ratio = fieldSetFlags()[2] ? this.ratio : (java.lang.Double) defaultValue(fields()[2]);
         record.viewportWidth = fieldSetFlags()[3] ? this.viewportWidth : (java.lang.Long) defaultValue(fields()[3]);
         record.viewportHeight = fieldSetFlags()[4] ? this.viewportHeight : (java.lang.Long) defaultValue(fields()[4]);
-        record.category = fieldSetFlags()[5] ? this.category : (ActivityCategory) defaultValue(fields()[5]);
+        record.category = fieldSetFlags()[5] ? this.category : (com.ebay.epic.sojourner.common.model.ActivityCategory) defaultValue(fields()[5]);
         record.type = fieldSetFlags()[6] ? this.type : (java.lang.String) defaultValue(fields()[6]);
         record.referer = fieldSetFlags()[7] ? this.referer : (java.lang.String) defaultValue(fields()[7]);
         record.details = fieldSetFlags()[8] ? this.details : (java.util.Map<java.lang.String,java.lang.String>) defaultValue(fields()[8]);

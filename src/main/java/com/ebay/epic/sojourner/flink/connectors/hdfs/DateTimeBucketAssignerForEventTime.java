@@ -66,4 +66,10 @@ public class DateTimeBucketAssignerForEventTime<IN> implements BucketAssigner<IN
         + zoneId
         + '}';
   }
+
+  public static void main(String[] args) {
+    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(DEFAULT_FORMAT_STRING).withZone(ZoneId.systemDefault());
+    System.out.println(dateTimeFormatter.format(Instant.ofEpochMilli(1673679370720L)));
+  }
+
 }

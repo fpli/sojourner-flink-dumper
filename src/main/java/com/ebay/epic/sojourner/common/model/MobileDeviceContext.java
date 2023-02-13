@@ -13,7 +13,7 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -7375714149340428841L;
+  private static final long serialVersionUID = -400051954281068804L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MobileDeviceContext\",\"namespace\":\"com.ebay.epic.sojourner.common.model\",\"fields\":[{\"name\":\"formFactor\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"FormFactor\",\"symbols\":[\"phone\",\"tablet\",\"watch\",\"desktop\"]}],\"default\":null},{\"name\":\"manufacturer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"osVersion\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"model\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"networkCarrier\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"networkConnectionType\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"theme\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"countryId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
@@ -51,7 +51,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
     return DECODER.decode(b);
   }
 
-  @Deprecated public FormFactor formFactor;
+  @Deprecated public com.ebay.epic.sojourner.common.model.FormFactor formFactor;
   @Deprecated public java.lang.String manufacturer;
   @Deprecated public java.lang.String osVersion;
   @Deprecated public java.lang.String model;
@@ -78,7 +78,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
    * @param theme The new value for theme
    * @param countryId The new value for countryId
    */
-  public MobileDeviceContext(FormFactor formFactor, java.lang.String manufacturer, java.lang.String osVersion, java.lang.String model, java.lang.String networkCarrier, java.lang.String networkConnectionType, java.lang.String theme, java.lang.String countryId) {
+  public MobileDeviceContext(com.ebay.epic.sojourner.common.model.FormFactor formFactor, java.lang.String manufacturer, java.lang.String osVersion, java.lang.String model, java.lang.String networkCarrier, java.lang.String networkConnectionType, java.lang.String theme, java.lang.String countryId) {
     this.formFactor = formFactor;
     this.manufacturer = manufacturer;
     this.osVersion = osVersion;
@@ -109,7 +109,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: formFactor = (FormFactor)value$; break;
+    case 0: formFactor = (com.ebay.epic.sojourner.common.model.FormFactor)value$; break;
     case 1: manufacturer = (java.lang.String)value$; break;
     case 2: osVersion = (java.lang.String)value$; break;
     case 3: model = (java.lang.String)value$; break;
@@ -125,7 +125,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
    * Gets the value of the 'formFactor' field.
    * @return The value of the 'formFactor' field.
    */
-  public FormFactor getFormFactor() {
+  public com.ebay.epic.sojourner.common.model.FormFactor getFormFactor() {
     return formFactor;
   }
 
@@ -133,7 +133,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
    * Sets the value of the 'formFactor' field.
    * @param value the value to set.
    */
-  public void setFormFactor(FormFactor value) {
+  public void setFormFactor(com.ebay.epic.sojourner.common.model.FormFactor value) {
     this.formFactor = value;
   }
 
@@ -253,8 +253,8 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
    * Creates a new MobileDeviceContext RecordBuilder.
    * @return A new MobileDeviceContext RecordBuilder
    */
-  public static MobileDeviceContext.Builder newBuilder() {
-    return new MobileDeviceContext.Builder();
+  public static com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder newBuilder() {
+    return new com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder();
   }
 
   /**
@@ -262,8 +262,8 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
    * @param other The existing builder to copy.
    * @return A new MobileDeviceContext RecordBuilder
    */
-  public static MobileDeviceContext.Builder newBuilder(MobileDeviceContext.Builder other) {
-    return new MobileDeviceContext.Builder(other);
+  public static com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder newBuilder(com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder other) {
+    return new com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder(other);
   }
 
   /**
@@ -271,8 +271,8 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
    * @param other The existing instance to copy.
    * @return A new MobileDeviceContext RecordBuilder
    */
-  public static MobileDeviceContext.Builder newBuilder(MobileDeviceContext other) {
-    return new MobileDeviceContext.Builder(other);
+  public static com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder newBuilder(com.ebay.epic.sojourner.common.model.MobileDeviceContext other) {
+    return new com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder(other);
   }
 
   /**
@@ -281,7 +281,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<MobileDeviceContext>
     implements org.apache.avro.data.RecordBuilder<MobileDeviceContext> {
 
-    private FormFactor formFactor;
+    private com.ebay.epic.sojourner.common.model.FormFactor formFactor;
     private java.lang.String manufacturer;
     private java.lang.String osVersion;
     private java.lang.String model;
@@ -299,7 +299,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(MobileDeviceContext.Builder other) {
+    private Builder(com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.formFactor)) {
         this.formFactor = data().deepCopy(fields()[0].schema(), other.formFactor);
@@ -339,7 +339,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
      * Creates a Builder by copying an existing MobileDeviceContext instance
      * @param other The existing instance to copy.
      */
-    private Builder(MobileDeviceContext other) {
+    private Builder(com.ebay.epic.sojourner.common.model.MobileDeviceContext other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.formFactor)) {
         this.formFactor = data().deepCopy(fields()[0].schema(), other.formFactor);
@@ -379,7 +379,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * Gets the value of the 'formFactor' field.
       * @return The value.
       */
-    public FormFactor getFormFactor() {
+    public com.ebay.epic.sojourner.common.model.FormFactor getFormFactor() {
       return formFactor;
     }
 
@@ -388,7 +388,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * @param value The value of 'formFactor'.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder setFormFactor(FormFactor value) {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder setFormFactor(com.ebay.epic.sojourner.common.model.FormFactor value) {
       validate(fields()[0], value);
       this.formFactor = value;
       fieldSetFlags()[0] = true;
@@ -408,7 +408,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * Clears the value of the 'formFactor' field.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder clearFormFactor() {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder clearFormFactor() {
       formFactor = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -427,7 +427,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * @param value The value of 'manufacturer'.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder setManufacturer(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder setManufacturer(java.lang.String value) {
       validate(fields()[1], value);
       this.manufacturer = value;
       fieldSetFlags()[1] = true;
@@ -447,7 +447,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * Clears the value of the 'manufacturer' field.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder clearManufacturer() {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder clearManufacturer() {
       manufacturer = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -466,7 +466,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * @param value The value of 'osVersion'.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder setOsVersion(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder setOsVersion(java.lang.String value) {
       validate(fields()[2], value);
       this.osVersion = value;
       fieldSetFlags()[2] = true;
@@ -486,7 +486,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * Clears the value of the 'osVersion' field.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder clearOsVersion() {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder clearOsVersion() {
       osVersion = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -505,7 +505,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * @param value The value of 'model'.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder setModel(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder setModel(java.lang.String value) {
       validate(fields()[3], value);
       this.model = value;
       fieldSetFlags()[3] = true;
@@ -525,7 +525,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * Clears the value of the 'model' field.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder clearModel() {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder clearModel() {
       model = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -544,7 +544,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * @param value The value of 'networkCarrier'.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder setNetworkCarrier(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder setNetworkCarrier(java.lang.String value) {
       validate(fields()[4], value);
       this.networkCarrier = value;
       fieldSetFlags()[4] = true;
@@ -564,7 +564,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * Clears the value of the 'networkCarrier' field.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder clearNetworkCarrier() {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder clearNetworkCarrier() {
       networkCarrier = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -583,7 +583,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * @param value The value of 'networkConnectionType'.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder setNetworkConnectionType(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder setNetworkConnectionType(java.lang.String value) {
       validate(fields()[5], value);
       this.networkConnectionType = value;
       fieldSetFlags()[5] = true;
@@ -603,7 +603,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * Clears the value of the 'networkConnectionType' field.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder clearNetworkConnectionType() {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder clearNetworkConnectionType() {
       networkConnectionType = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -622,7 +622,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * @param value The value of 'theme'.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder setTheme(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder setTheme(java.lang.String value) {
       validate(fields()[6], value);
       this.theme = value;
       fieldSetFlags()[6] = true;
@@ -642,7 +642,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * Clears the value of the 'theme' field.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder clearTheme() {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder clearTheme() {
       theme = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -661,7 +661,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * @param value The value of 'countryId'.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder setCountryId(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder setCountryId(java.lang.String value) {
       validate(fields()[7], value);
       this.countryId = value;
       fieldSetFlags()[7] = true;
@@ -681,7 +681,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
       * Clears the value of the 'countryId' field.
       * @return This builder.
       */
-    public MobileDeviceContext.Builder clearCountryId() {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder clearCountryId() {
       countryId = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -692,7 +692,7 @@ public class MobileDeviceContext extends org.apache.avro.specific.SpecificRecord
     public MobileDeviceContext build() {
       try {
         MobileDeviceContext record = new MobileDeviceContext();
-        record.formFactor = fieldSetFlags()[0] ? this.formFactor : (FormFactor) defaultValue(fields()[0]);
+        record.formFactor = fieldSetFlags()[0] ? this.formFactor : (com.ebay.epic.sojourner.common.model.FormFactor) defaultValue(fields()[0]);
         record.manufacturer = fieldSetFlags()[1] ? this.manufacturer : (java.lang.String) defaultValue(fields()[1]);
         record.osVersion = fieldSetFlags()[2] ? this.osVersion : (java.lang.String) defaultValue(fields()[2]);
         record.model = fieldSetFlags()[3] ? this.model : (java.lang.String) defaultValue(fields()[3]);

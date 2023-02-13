@@ -13,7 +13,7 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Trackable extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -8172898798649826057L;
+  private static final long serialVersionUID = -1107893870231331421L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Trackable\",\"namespace\":\"com.ebay.epic.sojourner.common.model\",\"fields\":[{\"name\":\"trackableId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"parentTrackableId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"entityId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"instanceId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"description\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"correlationId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"screenId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"entityType\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
@@ -253,8 +253,8 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
    * Creates a new Trackable RecordBuilder.
    * @return A new Trackable RecordBuilder
    */
-  public static Trackable.Builder newBuilder() {
-    return new Trackable.Builder();
+  public static com.ebay.epic.sojourner.common.model.Trackable.Builder newBuilder() {
+    return new com.ebay.epic.sojourner.common.model.Trackable.Builder();
   }
 
   /**
@@ -262,8 +262,8 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing builder to copy.
    * @return A new Trackable RecordBuilder
    */
-  public static Trackable.Builder newBuilder(Trackable.Builder other) {
-    return new Trackable.Builder(other);
+  public static com.ebay.epic.sojourner.common.model.Trackable.Builder newBuilder(com.ebay.epic.sojourner.common.model.Trackable.Builder other) {
+    return new com.ebay.epic.sojourner.common.model.Trackable.Builder(other);
   }
 
   /**
@@ -271,8 +271,8 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
    * @param other The existing instance to copy.
    * @return A new Trackable RecordBuilder
    */
-  public static Trackable.Builder newBuilder(Trackable other) {
-    return new Trackable.Builder(other);
+  public static com.ebay.epic.sojourner.common.model.Trackable.Builder newBuilder(com.ebay.epic.sojourner.common.model.Trackable other) {
+    return new com.ebay.epic.sojourner.common.model.Trackable.Builder(other);
   }
 
   /**
@@ -299,7 +299,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(Trackable.Builder other) {
+    private Builder(com.ebay.epic.sojourner.common.model.Trackable.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.trackableId)) {
         this.trackableId = data().deepCopy(fields()[0].schema(), other.trackableId);
@@ -339,7 +339,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
      * Creates a Builder by copying an existing Trackable instance
      * @param other The existing instance to copy.
      */
-    private Builder(Trackable other) {
+    private Builder(com.ebay.epic.sojourner.common.model.Trackable other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.trackableId)) {
         this.trackableId = data().deepCopy(fields()[0].schema(), other.trackableId);
@@ -388,7 +388,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'trackableId'.
       * @return This builder.
       */
-    public Trackable.Builder setTrackableId(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder setTrackableId(java.lang.String value) {
       validate(fields()[0], value);
       this.trackableId = value;
       fieldSetFlags()[0] = true;
@@ -408,7 +408,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'trackableId' field.
       * @return This builder.
       */
-    public Trackable.Builder clearTrackableId() {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder clearTrackableId() {
       trackableId = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -427,7 +427,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'parentTrackableId'.
       * @return This builder.
       */
-    public Trackable.Builder setParentTrackableId(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder setParentTrackableId(java.lang.String value) {
       validate(fields()[1], value);
       this.parentTrackableId = value;
       fieldSetFlags()[1] = true;
@@ -447,7 +447,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'parentTrackableId' field.
       * @return This builder.
       */
-    public Trackable.Builder clearParentTrackableId() {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder clearParentTrackableId() {
       parentTrackableId = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -466,7 +466,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'entityId'.
       * @return This builder.
       */
-    public Trackable.Builder setEntityId(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder setEntityId(java.lang.String value) {
       validate(fields()[2], value);
       this.entityId = value;
       fieldSetFlags()[2] = true;
@@ -486,7 +486,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'entityId' field.
       * @return This builder.
       */
-    public Trackable.Builder clearEntityId() {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder clearEntityId() {
       entityId = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -505,7 +505,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'instanceId'.
       * @return This builder.
       */
-    public Trackable.Builder setInstanceId(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder setInstanceId(java.lang.String value) {
       validate(fields()[3], value);
       this.instanceId = value;
       fieldSetFlags()[3] = true;
@@ -525,7 +525,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'instanceId' field.
       * @return This builder.
       */
-    public Trackable.Builder clearInstanceId() {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder clearInstanceId() {
       instanceId = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -544,7 +544,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'description'.
       * @return This builder.
       */
-    public Trackable.Builder setDescription(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder setDescription(java.lang.String value) {
       validate(fields()[4], value);
       this.description = value;
       fieldSetFlags()[4] = true;
@@ -564,7 +564,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'description' field.
       * @return This builder.
       */
-    public Trackable.Builder clearDescription() {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder clearDescription() {
       description = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -583,7 +583,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'correlationId'.
       * @return This builder.
       */
-    public Trackable.Builder setCorrelationId(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder setCorrelationId(java.lang.String value) {
       validate(fields()[5], value);
       this.correlationId = value;
       fieldSetFlags()[5] = true;
@@ -603,7 +603,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'correlationId' field.
       * @return This builder.
       */
-    public Trackable.Builder clearCorrelationId() {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder clearCorrelationId() {
       correlationId = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -622,7 +622,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'screenId'.
       * @return This builder.
       */
-    public Trackable.Builder setScreenId(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder setScreenId(java.lang.String value) {
       validate(fields()[6], value);
       this.screenId = value;
       fieldSetFlags()[6] = true;
@@ -642,7 +642,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'screenId' field.
       * @return This builder.
       */
-    public Trackable.Builder clearScreenId() {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder clearScreenId() {
       screenId = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -661,7 +661,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * @param value The value of 'entityType'.
       * @return This builder.
       */
-    public Trackable.Builder setEntityType(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder setEntityType(java.lang.String value) {
       validate(fields()[7], value);
       this.entityType = value;
       fieldSetFlags()[7] = true;
@@ -681,7 +681,7 @@ public class Trackable extends org.apache.avro.specific.SpecificRecordBase imple
       * Clears the value of the 'entityType' field.
       * @return This builder.
       */
-    public Trackable.Builder clearEntityType() {
+    public com.ebay.epic.sojourner.common.model.Trackable.Builder clearEntityType() {
       entityType = null;
       fieldSetFlags()[7] = false;
       return this;

@@ -2,9 +2,9 @@ kafka:
   consumer:
     stream: behavior.unified.sojourner.bot
     topic:
-      - behavior.unified.sojourner.bot.late.sojevent-rno
-      - behavior.unified.sojourner.bot.late.sojevent-lvs
-    group-id: unified-lateevent-ubi-bot-dumper
+      - behavior.unified.sojourner.bot.sojevent-rno
+      - behavior.unified.sojourner.bot.sojevent-lvs
+    group-id: unified-ubi-bot-dumper
     bootstrap-servers:
       rno:
         - rhs-necwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
@@ -30,14 +30,14 @@ kafka:
     partition-discovery-interval-ms: 60000
 flink:
   app:
-    name: Unified Sessionization Lateevent Ubi Bot HDFS Load Pipeline
+    name: Unified Sessionization Ubi Bot HDFS Load Pipeline
     parallelism:
-      source: 20
-      process: 20
+      source: 200
+      process: 200
       sink:
         hdfs:
-          watermark_bot: 20
-          ubi_bot: 20
+          watermark_bot: 100
+          ubi_bot: 200
     operator-name:
       source: consumer operator
       process: process operator
@@ -51,7 +51,7 @@ flink:
       process: process-group
       sink: sink-group
     metric:
-      watermark-process-progress: ubi-lateevent-bot-watermark-delay-time
+      watermark-process-progress: uni-ubi-bot-watermark-delay-time
     checkpoint:
       data-dir: /opt/sojourner-ubd/checkpoint
       interval-ms: 300000
@@ -65,5 +65,5 @@ flink:
 hdfs:
   dump:
     path:
-      ubi_bot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_late_ubi_dump_w/type=bot
-      watermark_bot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_late_ubi_watermark_w/type=bot
+      ubi_bot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_uni_ubi_event_dump_w/type=bot
+      watermark_bot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_uni_ubi_event_watermark_w/type=bot

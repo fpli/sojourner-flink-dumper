@@ -32,12 +32,12 @@ flink:
   app:
     name: Unified Sessionization Lateevent Surface Web HDFS Load Pipeline
     parallelism:
-      source: 50
-      process: 50
+      source: 10
+      process: 10
       sink:
         hdfs:
-          watermark_nonbot: 20
-          surface_web_nonbot: 50
+          watermark_nonbot: 10
+          surface_web_nonbot: 10
     operator-name:
       source: consumer operator
       process: process operator

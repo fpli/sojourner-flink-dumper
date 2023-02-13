@@ -2,9 +2,9 @@ kafka:
   consumer:
     stream: behavior.unified.sojourner.nonbot
     topic:
-      - behavior.unified.sojourner.nonbot.late.sojevent-rno
-      - behavior.unified.sojourner.nonbot.late.sojevent-lvs
-    group-id: unified-lateevent-ubi-nonbot-dumper
+      - behavior.unified.sojourner.nonbot.sojevent-rno
+      - behavior.unified.sojourner.nonbot.sojevent-lvs
+    group-id: unified-ubi-nonbot-dumper
     bootstrap-servers:
       rno:
         - rhs-ddcwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
@@ -30,14 +30,14 @@ kafka:
     partition-discovery-interval-ms: 60000
 flink:
   app:
-    name: Unified Sessionization Lateevent Ubi Nonbot HDFS Load Pipeline
+    name: Unified Sessionization Ubi Nonbot HDFS Load Pipeline
     parallelism:
-      source: 20
-      process: 20
+      source: 200
+      process: 200
       sink:
         hdfs:
-          watermark_nonbot: 20
-          ubi_nonbot: 20
+          watermark_nonbot: 100
+          ubi_nonbot: 200
     operator-name:
       source: consumer operator
       process: process operator
@@ -51,7 +51,7 @@ flink:
       process: process-group
       sink: sink-group
     metric:
-      watermark-process-progress: ubi-lateevent-nonbot-watermark-delay-time
+      watermark-process-progress: uni-ubi-nonbot-watermark-delay-time
     checkpoint:
       data-dir: /opt/sojourner-ubd/checkpoint
       interval-ms: 300000
@@ -65,5 +65,5 @@ flink:
 hdfs:
   dump:
     path:
-      ubi_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_late_ubi_dump_w/type=nonbot
-      watermark_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_late_ubi_watermark_w/type=nonbot
+      ubi_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_uni_ubi_event_dump_w/type=nonbot
+      watermark_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_uni_ubi_event_watermark_w/type=nonbot

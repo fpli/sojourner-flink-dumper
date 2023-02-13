@@ -13,7 +13,7 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Context extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -5302579171841346328L;
+  private static final long serialVersionUID = 7176321561880177375L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Context\",\"namespace\":\"com.ebay.epic.sojourner.common.model\",\"fields\":[{\"name\":\"appId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"version\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"os\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"utcOffset\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"clientIp\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"userLang\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"userAgent\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"screenWidth\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"screenHeight\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"screenDPI\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"deviceInfo\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"MobileDeviceContext\",\"fields\":[{\"name\":\"formFactor\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"FormFactor\",\"symbols\":[\"phone\",\"tablet\",\"watch\",\"desktop\"]}],\"default\":null},{\"name\":\"manufacturer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"osVersion\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"model\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"networkCarrier\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"networkConnectionType\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"theme\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"countryId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}],\"default\":null},{\"name\":\"others\",\"type\":[\"null\",{\"type\":\"map\",\"values\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"avro.java.string\":\"String\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
@@ -61,7 +61,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
   @Deprecated public java.lang.Long screenWidth;
   @Deprecated public java.lang.Long screenHeight;
   @Deprecated public java.lang.Long screenDPI;
-  @Deprecated public MobileDeviceContext deviceInfo;
+  @Deprecated public com.ebay.epic.sojourner.common.model.MobileDeviceContext deviceInfo;
   @Deprecated public java.util.Map<java.lang.String,java.lang.String> others;
 
   /**
@@ -86,7 +86,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param deviceInfo The new value for deviceInfo
    * @param others The new value for others
    */
-  public Context(java.lang.String appId, java.lang.String version, java.lang.String os, java.lang.String utcOffset, java.lang.String clientIp, java.lang.String userLang, java.lang.String userAgent, java.lang.Long screenWidth, java.lang.Long screenHeight, java.lang.Long screenDPI, MobileDeviceContext deviceInfo, java.util.Map<java.lang.String,java.lang.String> others) {
+  public Context(java.lang.String appId, java.lang.String version, java.lang.String os, java.lang.String utcOffset, java.lang.String clientIp, java.lang.String userLang, java.lang.String userAgent, java.lang.Long screenWidth, java.lang.Long screenHeight, java.lang.Long screenDPI, com.ebay.epic.sojourner.common.model.MobileDeviceContext deviceInfo, java.util.Map<java.lang.String,java.lang.String> others) {
     this.appId = appId;
     this.version = version;
     this.os = os;
@@ -135,7 +135,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
     case 7: screenWidth = (java.lang.Long)value$; break;
     case 8: screenHeight = (java.lang.Long)value$; break;
     case 9: screenDPI = (java.lang.Long)value$; break;
-    case 10: deviceInfo = (MobileDeviceContext)value$; break;
+    case 10: deviceInfo = (com.ebay.epic.sojourner.common.model.MobileDeviceContext)value$; break;
     case 11: others = (java.util.Map<java.lang.String,java.lang.String>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -305,7 +305,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'deviceInfo' field.
    * @return The value of the 'deviceInfo' field.
    */
-  public MobileDeviceContext getDeviceInfo() {
+  public com.ebay.epic.sojourner.common.model.MobileDeviceContext getDeviceInfo() {
     return deviceInfo;
   }
 
@@ -313,7 +313,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'deviceInfo' field.
    * @param value the value to set.
    */
-  public void setDeviceInfo(MobileDeviceContext value) {
+  public void setDeviceInfo(com.ebay.epic.sojourner.common.model.MobileDeviceContext value) {
     this.deviceInfo = value;
   }
 
@@ -337,8 +337,8 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
    * Creates a new Context RecordBuilder.
    * @return A new Context RecordBuilder
    */
-  public static Context.Builder newBuilder() {
-    return new Context.Builder();
+  public static com.ebay.epic.sojourner.common.model.Context.Builder newBuilder() {
+    return new com.ebay.epic.sojourner.common.model.Context.Builder();
   }
 
   /**
@@ -346,8 +346,8 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing builder to copy.
    * @return A new Context RecordBuilder
    */
-  public static Context.Builder newBuilder(Context.Builder other) {
-    return new Context.Builder(other);
+  public static com.ebay.epic.sojourner.common.model.Context.Builder newBuilder(com.ebay.epic.sojourner.common.model.Context.Builder other) {
+    return new com.ebay.epic.sojourner.common.model.Context.Builder(other);
   }
 
   /**
@@ -355,8 +355,8 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing instance to copy.
    * @return A new Context RecordBuilder
    */
-  public static Context.Builder newBuilder(Context other) {
-    return new Context.Builder(other);
+  public static com.ebay.epic.sojourner.common.model.Context.Builder newBuilder(com.ebay.epic.sojourner.common.model.Context other) {
+    return new com.ebay.epic.sojourner.common.model.Context.Builder(other);
   }
 
   /**
@@ -375,8 +375,8 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
     private java.lang.Long screenWidth;
     private java.lang.Long screenHeight;
     private java.lang.Long screenDPI;
-    private MobileDeviceContext deviceInfo;
-    private MobileDeviceContext.Builder deviceInfoBuilder;
+    private com.ebay.epic.sojourner.common.model.MobileDeviceContext deviceInfo;
+    private com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder deviceInfoBuilder;
     private java.util.Map<java.lang.String,java.lang.String> others;
 
     /** Creates a new Builder */
@@ -388,7 +388,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(Context.Builder other) {
+    private Builder(com.ebay.epic.sojourner.common.model.Context.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.appId)) {
         this.appId = data().deepCopy(fields()[0].schema(), other.appId);
@@ -435,7 +435,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
         fieldSetFlags()[10] = true;
       }
       if (other.hasDeviceInfoBuilder()) {
-        this.deviceInfoBuilder = MobileDeviceContext.newBuilder(other.getDeviceInfoBuilder());
+        this.deviceInfoBuilder = com.ebay.epic.sojourner.common.model.MobileDeviceContext.newBuilder(other.getDeviceInfoBuilder());
       }
       if (isValidValue(fields()[11], other.others)) {
         this.others = data().deepCopy(fields()[11].schema(), other.others);
@@ -447,7 +447,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing Context instance
      * @param other The existing instance to copy.
      */
-    private Builder(Context other) {
+    private Builder(com.ebay.epic.sojourner.common.model.Context other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.appId)) {
         this.appId = data().deepCopy(fields()[0].schema(), other.appId);
@@ -513,7 +513,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'appId'.
       * @return This builder.
       */
-    public Context.Builder setAppId(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Context.Builder setAppId(java.lang.String value) {
       validate(fields()[0], value);
       this.appId = value;
       fieldSetFlags()[0] = true;
@@ -533,7 +533,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'appId' field.
       * @return This builder.
       */
-    public Context.Builder clearAppId() {
+    public com.ebay.epic.sojourner.common.model.Context.Builder clearAppId() {
       appId = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -552,7 +552,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'version'.
       * @return This builder.
       */
-    public Context.Builder setVersion(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Context.Builder setVersion(java.lang.String value) {
       validate(fields()[1], value);
       this.version = value;
       fieldSetFlags()[1] = true;
@@ -572,7 +572,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'version' field.
       * @return This builder.
       */
-    public Context.Builder clearVersion() {
+    public com.ebay.epic.sojourner.common.model.Context.Builder clearVersion() {
       version = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -591,7 +591,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'os'.
       * @return This builder.
       */
-    public Context.Builder setOs(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Context.Builder setOs(java.lang.String value) {
       validate(fields()[2], value);
       this.os = value;
       fieldSetFlags()[2] = true;
@@ -611,7 +611,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'os' field.
       * @return This builder.
       */
-    public Context.Builder clearOs() {
+    public com.ebay.epic.sojourner.common.model.Context.Builder clearOs() {
       os = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -630,7 +630,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'utcOffset'.
       * @return This builder.
       */
-    public Context.Builder setUtcOffset(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Context.Builder setUtcOffset(java.lang.String value) {
       validate(fields()[3], value);
       this.utcOffset = value;
       fieldSetFlags()[3] = true;
@@ -650,7 +650,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'utcOffset' field.
       * @return This builder.
       */
-    public Context.Builder clearUtcOffset() {
+    public com.ebay.epic.sojourner.common.model.Context.Builder clearUtcOffset() {
       utcOffset = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -669,7 +669,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'clientIp'.
       * @return This builder.
       */
-    public Context.Builder setClientIp(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Context.Builder setClientIp(java.lang.String value) {
       validate(fields()[4], value);
       this.clientIp = value;
       fieldSetFlags()[4] = true;
@@ -689,7 +689,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'clientIp' field.
       * @return This builder.
       */
-    public Context.Builder clearClientIp() {
+    public com.ebay.epic.sojourner.common.model.Context.Builder clearClientIp() {
       clientIp = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -708,7 +708,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'userLang'.
       * @return This builder.
       */
-    public Context.Builder setUserLang(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Context.Builder setUserLang(java.lang.String value) {
       validate(fields()[5], value);
       this.userLang = value;
       fieldSetFlags()[5] = true;
@@ -728,7 +728,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'userLang' field.
       * @return This builder.
       */
-    public Context.Builder clearUserLang() {
+    public com.ebay.epic.sojourner.common.model.Context.Builder clearUserLang() {
       userLang = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -747,7 +747,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'userAgent'.
       * @return This builder.
       */
-    public Context.Builder setUserAgent(java.lang.String value) {
+    public com.ebay.epic.sojourner.common.model.Context.Builder setUserAgent(java.lang.String value) {
       validate(fields()[6], value);
       this.userAgent = value;
       fieldSetFlags()[6] = true;
@@ -767,7 +767,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'userAgent' field.
       * @return This builder.
       */
-    public Context.Builder clearUserAgent() {
+    public com.ebay.epic.sojourner.common.model.Context.Builder clearUserAgent() {
       userAgent = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -786,7 +786,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'screenWidth'.
       * @return This builder.
       */
-    public Context.Builder setScreenWidth(java.lang.Long value) {
+    public com.ebay.epic.sojourner.common.model.Context.Builder setScreenWidth(java.lang.Long value) {
       validate(fields()[7], value);
       this.screenWidth = value;
       fieldSetFlags()[7] = true;
@@ -806,7 +806,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'screenWidth' field.
       * @return This builder.
       */
-    public Context.Builder clearScreenWidth() {
+    public com.ebay.epic.sojourner.common.model.Context.Builder clearScreenWidth() {
       screenWidth = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -825,7 +825,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'screenHeight'.
       * @return This builder.
       */
-    public Context.Builder setScreenHeight(java.lang.Long value) {
+    public com.ebay.epic.sojourner.common.model.Context.Builder setScreenHeight(java.lang.Long value) {
       validate(fields()[8], value);
       this.screenHeight = value;
       fieldSetFlags()[8] = true;
@@ -845,7 +845,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'screenHeight' field.
       * @return This builder.
       */
-    public Context.Builder clearScreenHeight() {
+    public com.ebay.epic.sojourner.common.model.Context.Builder clearScreenHeight() {
       screenHeight = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -864,7 +864,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'screenDPI'.
       * @return This builder.
       */
-    public Context.Builder setScreenDPI(java.lang.Long value) {
+    public com.ebay.epic.sojourner.common.model.Context.Builder setScreenDPI(java.lang.Long value) {
       validate(fields()[9], value);
       this.screenDPI = value;
       fieldSetFlags()[9] = true;
@@ -884,7 +884,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'screenDPI' field.
       * @return This builder.
       */
-    public Context.Builder clearScreenDPI() {
+    public com.ebay.epic.sojourner.common.model.Context.Builder clearScreenDPI() {
       screenDPI = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -894,7 +894,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'deviceInfo' field.
       * @return The value.
       */
-    public MobileDeviceContext getDeviceInfo() {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext getDeviceInfo() {
       return deviceInfo;
     }
 
@@ -903,7 +903,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'deviceInfo'.
       * @return This builder.
       */
-    public Context.Builder setDeviceInfo(MobileDeviceContext value) {
+    public com.ebay.epic.sojourner.common.model.Context.Builder setDeviceInfo(com.ebay.epic.sojourner.common.model.MobileDeviceContext value) {
       validate(fields()[10], value);
       this.deviceInfoBuilder = null;
       this.deviceInfo = value;
@@ -923,12 +923,12 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
      * Gets the Builder instance for the 'deviceInfo' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public MobileDeviceContext.Builder getDeviceInfoBuilder() {
+    public com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder getDeviceInfoBuilder() {
       if (deviceInfoBuilder == null) {
         if (hasDeviceInfo()) {
-          setDeviceInfoBuilder(MobileDeviceContext.newBuilder(deviceInfo));
+          setDeviceInfoBuilder(com.ebay.epic.sojourner.common.model.MobileDeviceContext.newBuilder(deviceInfo));
         } else {
-          setDeviceInfoBuilder(MobileDeviceContext.newBuilder());
+          setDeviceInfoBuilder(com.ebay.epic.sojourner.common.model.MobileDeviceContext.newBuilder());
         }
       }
       return deviceInfoBuilder;
@@ -939,7 +939,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
      * @param value The builder instance that must be set.
      * @return This builder.
      */
-    public Context.Builder setDeviceInfoBuilder(MobileDeviceContext.Builder value) {
+    public com.ebay.epic.sojourner.common.model.Context.Builder setDeviceInfoBuilder(com.ebay.epic.sojourner.common.model.MobileDeviceContext.Builder value) {
       clearDeviceInfo();
       deviceInfoBuilder = value;
       return this;
@@ -957,7 +957,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'deviceInfo' field.
       * @return This builder.
       */
-    public Context.Builder clearDeviceInfo() {
+    public com.ebay.epic.sojourner.common.model.Context.Builder clearDeviceInfo() {
       deviceInfo = null;
       deviceInfoBuilder = null;
       fieldSetFlags()[10] = false;
@@ -977,7 +977,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'others'.
       * @return This builder.
       */
-    public Context.Builder setOthers(java.util.Map<java.lang.String,java.lang.String> value) {
+    public com.ebay.epic.sojourner.common.model.Context.Builder setOthers(java.util.Map<java.lang.String,java.lang.String> value) {
       validate(fields()[11], value);
       this.others = value;
       fieldSetFlags()[11] = true;
@@ -997,7 +997,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'others' field.
       * @return This builder.
       */
-    public Context.Builder clearOthers() {
+    public com.ebay.epic.sojourner.common.model.Context.Builder clearOthers() {
       others = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -1021,7 +1021,7 @@ public class Context extends org.apache.avro.specific.SpecificRecordBase impleme
         if (deviceInfoBuilder != null) {
           record.deviceInfo = this.deviceInfoBuilder.build();
         } else {
-          record.deviceInfo = fieldSetFlags()[10] ? this.deviceInfo : (MobileDeviceContext) defaultValue(fields()[10]);
+          record.deviceInfo = fieldSetFlags()[10] ? this.deviceInfo : (com.ebay.epic.sojourner.common.model.MobileDeviceContext) defaultValue(fields()[10]);
         }
         record.others = fieldSetFlags()[11] ? this.others : (java.util.Map<java.lang.String,java.lang.String>) defaultValue(fields()[11]);
         return record;
