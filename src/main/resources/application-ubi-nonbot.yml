@@ -4,7 +4,7 @@ kafka:
     topic:
       - behavior.unified.sojourner.nonbot.sojevent-rno
       - behavior.unified.sojourner.nonbot.sojevent-lvs
-    group-id: uni-sess-dumper-ubi
+    group-id: uni-sess-ubi-nonbot-dumper
     bootstrap-servers:
       rno:
         - rhs-ddcwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
@@ -38,8 +38,8 @@ flink:
       process: 100
       sink:
         hdfs:
-          watermark_bot: 20
-          ubi_bot: 200
+          watermark_nonbot: 20
+          ubi_nonbot: 200
     operator-name:
       source: consumer operator
       process: process operator

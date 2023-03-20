@@ -4,7 +4,7 @@ kafka:
     topic:
       - behavior.unified.sojourner.bot.sojevent-rno
       - behavior.unified.sojourner.bot.sojevent-lvs
-    group-id: uni-sess-dumper-ubi-bot
+    group-id: uni-sess-ubi-bot-dumper
     bootstrap-servers:
       rno:
         - rhs-necwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
