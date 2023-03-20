@@ -1,0 +1,71 @@
+kafka:
+  consumer:
+    stream: behavior.unified.sojourner.nonbot
+    topic:
+      - behavior.unified.sojourner.nonbot.sojevent-rno
+      - behavior.unified.sojourner.nonbot.sojevent-lvs
+    group-id: uni-sess-dumper-ubi
+    bootstrap-servers:
+      rno:
+        - rhs-ddcwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ddcwkiaa-kfk-2.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ddcwkiaa-kfk-3.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ddcwkiaa-kfk-4.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ddcwkiaa-kfk-5.rheos-streaming-prod.vip.ebay.com:9092
+      lvs:
+        - rhs-adcwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-adcwkiaa-kfk-2.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-adcwkiaa-kfk-3.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-adcwkiaa-kfk-4.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-adcwkiaa-kfk-5.rheos-streaming-prod.vip.ebay.com:9092
+    max-poll-records: 3000
+    # 16MB, default value is 50MB
+    fetch-max-bytes: 16777216
+    # 128KB, default value is 64KB
+    receive-buffer: 131072
+    fetch-max-wait-ms: 100
+    # 4MB, default value is 1MB
+    max-partitions-fetch-bytes: 4194304
+    auto-offset-reset: latest
+    partition-discovery-interval-ms: 60000
+flink:
+  app:
+    source:
+      dc: rno
+    name: Unified Sessionization UBI NonBot HDFS Load Pipeline
+    parallelism:
+      source: 100
+      process: 100
+      sink:
+        hdfs:
+          watermark_bot: 20
+          ubi_bot: 200
+    operator-name:
+      source: consumer operator
+      process: process operator
+      sink: sink operator
+    uid:
+      source: consumer-operator
+      process: process-operator
+      sink: sink-operator
+    slot-sharing-group:
+      source: consumer-group
+      process: process-group
+      sink: sink-group
+    checkpoint:
+      data-dir: /opt/sojourner-ubd/checkpoint
+      interval-ms: 300000
+      timeout-ms: 900000
+      min-pause-between-ms: 120000
+      max-concurrent: 1
+      tolerate-failure-number: 3
+    sink:
+      eventtype: ubi_nonbot
+      watermark: watermark_nonbot
+    metric:
+      watermark-process-progress: unified-sojevent-nonbot-watermark-delay-time
+hdfs:
+  dump:
+    path:
+      ubi_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_ubievent_dump_w/type=nonbot
+      watermark_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_ubievent_watermark_w/type=nonbot
