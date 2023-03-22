@@ -18,7 +18,7 @@ kafka:
         - rhs-adcwkiaa-kfk-3.rheos-streaming-prod.vip.ebay.com:9092
         - rhs-adcwkiaa-kfk-4.rheos-streaming-prod.vip.ebay.com:9092
         - rhs-adcwkiaa-kfk-5.rheos-streaming-prod.vip.ebay.com:9092
-    max-poll-records: 3000
+    max-poll-records: 9000
     # 16MB, default value is 50MB
     fetch-max-bytes: 16777216
     # 128KB, default value is 64KB
@@ -34,12 +34,12 @@ flink:
       dc: rno
     name: Unified Sessionization UBI NonBot HDFS Load Pipeline
     parallelism:
-      source: 100
-      process: 100
+      source: 400
+      process: 400
       sink:
         hdfs:
-          watermark_nonbot: 20
-          ubi_nonbot: 200
+          watermark_nonbot: 400
+          ubi_nonbot: 400
     operator-name:
       source: consumer operator
       process: process operator
@@ -50,8 +50,8 @@ flink:
       sink: sink-operator
     slot-sharing-group:
       source: consumer-group
-      process: process-group
-      sink: sink-group
+      process: consumer-group
+      sink: consumer-group
     checkpoint:
       data-dir: /opt/sojourner-ubd/checkpoint
       interval-ms: 300000
@@ -67,5 +67,5 @@ flink:
 hdfs:
   dump:
     path:
-      ubi_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_ubievent_dump_w/type=nonbot
-      watermark_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_ubievent_watermark_w/type=nonbot
+      ubi_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_uni_ubi_event_dump_w/type=nonbot
+      watermark_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_uni_ubi_event_watermark_w/type=nonbot
