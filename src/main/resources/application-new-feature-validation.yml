@@ -1,7 +1,8 @@
 kafka:
   consumer:
     stream: misc.ssl
-    topic: misc.ssl.validation
+    topic:
+      - misc.ssl.validation
     group-id: sojourner-misc-dumper
     bootstrap-servers:
       slc:
