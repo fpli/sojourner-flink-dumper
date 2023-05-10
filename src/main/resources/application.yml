@@ -24,7 +24,7 @@ kafka:
         - rhs-dyrvkiaa-kfk-rno-4.rheos-streaming-prod.svc.25.tess.io:9092
         - rhs-dyrvkiaa-kfk-rno-5.rheos-streaming-prod.svc.25.tess.io:9092
 
-    max-poll-records: 3000
+    max-poll-records: 6000
     # 16MB, default value is 50MB
     fetch-max-bytes: 16777216
     # 128KB, default value is 64KB

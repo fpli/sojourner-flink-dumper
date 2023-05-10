@@ -23,9 +23,15 @@ public class RichParquetAvroWriters {
 
     private static <T> ParquetWriter<T> createAvroParquetWriter(
             String schemaStr, GenericData dataModel, OutputFile out) throws IOException {
+        return createAvroParquetWriter(schemaStr, dataModel, out, CompressionCodecName.GZIP);
+    }
+
+    private static <T> ParquetWriter<T> createAvroParquetWriter(
+            String schemaStr, GenericData dataModel, OutputFile out,
+            CompressionCodecName compressionCodecName) throws IOException {
         return AvroParquetWriter.<T>builder(out)
                 .withSchema(new Schema.Parser().parse(schemaStr))
                 .withDataModel(dataModel)
-                .withCompressionCodec(CompressionCodecName.SNAPPY).build();
+                .withCompressionCodec(compressionCodecName).build();
     }
 }

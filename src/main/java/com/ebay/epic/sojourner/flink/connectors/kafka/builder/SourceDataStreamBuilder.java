@@ -21,6 +21,8 @@ public class SourceDataStreamBuilder<T> {
     private String uid;
     private String slotGroup;
     private int parallelism = getInteger(Property.DEFAULT_PARALLELISM);
+
+    private int maxParallism = getInteger(Property.MAX_PARALLELISM);
     private int outOfOrderlessInMin;
     private String fromTimestamp = "0";
     private int idleSourceTimeout;
@@ -71,7 +73,10 @@ public class SourceDataStreamBuilder<T> {
         this.idleSourceTimeout = configManager.getIntValue(idleSourceTimeout);
         return this;
     }
-
+    public SourceDataStreamBuilder<T> maxParallism(String maxParallism) {
+        this.maxParallism = configManager.getParallelism(maxParallism);
+        return this;
+    }
     public DataStream<T> build(KafkaDeserializationSchema<T> schema) {
         Preconditions.checkNotNull(dc);
         return this.build(schema, dc, operatorName, parallelism, uid, slotGroup, rescaled);
@@ -96,6 +101,7 @@ public class SourceDataStreamBuilder<T> {
                 .setParallelism(parallelism)
                 .slotSharingGroup(slotGroup)
                 .name(operatorName)
+                .setMaxParallelism(maxParallism)
                 .uid(uid);
 
         if (rescaled) {
