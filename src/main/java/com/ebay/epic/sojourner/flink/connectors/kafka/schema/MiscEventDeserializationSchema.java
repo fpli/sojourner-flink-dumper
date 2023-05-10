@@ -1,9 +1,9 @@
 package com.ebay.epic.sojourner.flink.connectors.kafka.schema;
 
+import com.ebay.epic.sojourner.common.model.MiscEvent;
 import com.ebay.epic.sojourner.flink.connectors.kafka.factory.RheosEventSerdeFactory;
 import io.ebay.rheos.schema.event.RheosEvent;
 import java.io.IOException;
-import model.MiscEvent;
 import org.apache.avro.generic.GenericRecord;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.flink.api.common.serialization.DeserializationSchema;

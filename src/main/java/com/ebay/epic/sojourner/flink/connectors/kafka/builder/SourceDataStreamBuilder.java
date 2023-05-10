@@ -11,6 +11,7 @@ import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.kafka.KafkaDeserializationSchema;
 
+import static com.ebay.epic.sojourner.common.constant.Constants.DOMAIN_DEL;
 import static com.ebay.epic.sojourner.common.env.FlinkEnvUtils.getInteger;
 
 public class SourceDataStreamBuilder<T> {
@@ -45,7 +46,7 @@ public class SourceDataStreamBuilder<T> {
     }
 
     public SourceDataStreamBuilder<T> uid(String uid) {
-        this.uid = configManager.getOPUid(uid);
+        this.uid = configManager.getOPUid(uid)+DOMAIN_DEL+ dc;
         return this;
     }
 
