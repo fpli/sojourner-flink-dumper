@@ -49,6 +49,24 @@ public class KafkaToHdfsBaseJob {
         return rawEventDataStream;
     }
 
+    public <T> DataStream<T> consumerBuilder(StreamExecutionEnvironment see,
+                                             DataCenter dc, KafkaDeserializationSchema<T> kds,boolean isSSL) {
+        SourceDataStreamBuilder<T> dataStreamBuilder = new SourceDataStreamBuilder<>(see, dc);
+        // 1. Rheos Consumer
+        // 1.1 Consume RawEvent from Rheos PathFinder topic
+        // 1.2 Assign timestamps and emit watermarks.
+        DataStream<T> rawEventDataStream = dataStreamBuilder
+                .operatorName(SOURCE_OPERATOR_NAME_BASE)
+                .uid(SOURCE_UID_BASE)
+                .slotGroup(SOURCE_SLOT_SHARE_GROUP_BASE)
+                .outOfOrderlessInMin(FLINK_APP_SOURCE_OFO_BASE)
+                .fromTimestamp(FLINK_APP_SOURCE_FROM_TS_BASE)
+                .parallelism(SOURCE_PARALLELISM)
+                .idleSourceTimeout(FLINK_APP_SOURCE_TIM_BASE)
+                .build(kds,isSSL);
+        return rawEventDataStream;
+    }
+
     public <IN> SingleOutputStreamOperator<SojWatermark> processFunctionBuilder(
             DataStream<IN> dataStream, ProcessFunction<IN, SojWatermark> processFunction) {
         ProcessFunctionBuilder<IN,SojWatermark> processFunctionBuilder =

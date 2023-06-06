@@ -18,17 +18,20 @@ public class KafkaConsumerConfig extends KafkaCommonConfig {
     private List<String> topics;
 
 
-    private KafkaConsumerConfig(DataCenter dc,  boolean isDerived) {
-        super(dc, isDerived);
+    private KafkaConsumerConfig(DataCenter dc,  boolean isDerived,boolean isSSL) {
+        super(dc, isDerived,isSSL);
         this.topics = this.getConfigManager().getTopics(KAFKA_CONSUMER_TOPIC_BASE);
     }
 
     public static KafkaConsumerConfig build(DataCenter dataCenter) {
-        return build(dataCenter,true);
+        return build(dataCenter,true,false);
     }
 
-    public static KafkaConsumerConfig build(DataCenter dataCenter,  boolean isDerived) {
-        KafkaConsumerConfig config = new KafkaConsumerConfig(dataCenter, isDerived);
+    public static KafkaConsumerConfig build(DataCenter dataCenter,boolean isSSL) {
+        return build(dataCenter,true,isSSL);
+    }
+    public static KafkaConsumerConfig build(DataCenter dataCenter,  boolean isDerived,boolean isSSL) {
+        KafkaConsumerConfig config = new KafkaConsumerConfig(dataCenter, isDerived,isSSL);
         return config;
     }
 

@@ -72,5 +72,5 @@ flink:
 hdfs:
   dump:
     path:
-      new_feature_onboarding: hdfs://apollo-rno/sys/soj/ubd/misc_test_preprod/
-      new_feature_onboarding_watermark: hdfs://apollo-rno/sys/soj/ubd/misc_test_watermark_preprod/
+      new_feature_onboarding: hdfs://apollo-router/sys/soj/ubd/misc_test/
+      new_feature_onboarding_watermark: hdfs://apollo-router/sys/soj/ubd/misc_test_watermark/
