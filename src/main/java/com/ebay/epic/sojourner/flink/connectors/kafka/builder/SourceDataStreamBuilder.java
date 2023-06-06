@@ -80,19 +80,24 @@ public class SourceDataStreamBuilder<T> {
     }
     public DataStream<T> build(KafkaDeserializationSchema<T> schema) {
         Preconditions.checkNotNull(dc);
-        return this.build(schema, dc, operatorName, parallelism, uid, slotGroup, rescaled);
+        return this.build(schema, dc, operatorName, parallelism, uid, slotGroup, rescaled,false);
+    }
+
+    public DataStream<T> build(KafkaDeserializationSchema<T> schema, boolean isSSL) {
+        Preconditions.checkNotNull(dc);
+        return this.build(schema, dc, operatorName, parallelism, uid, slotGroup, rescaled,isSSL);
     }
 
     public DataStream<T> buildRescaled(KafkaDeserializationSchema<T> schema) {
         Preconditions.checkNotNull(dc);
-        return this.build(schema, dc, operatorName, parallelism, uid, slotGroup, true);
+        return this.build(schema, dc, operatorName, parallelism, uid, slotGroup, true,false);
     }
 
     public DataStream<T> build(KafkaDeserializationSchema<T> schema, DataCenter dc,
                                String operatorName, int parallelism, String uid, String slotGroup,
-                               boolean rescaled) {
+                               boolean rescaled,boolean isSSL) {
         Preconditions.checkNotNull(dc);
-        KafkaConsumerConfig config = KafkaConsumerConfig.build(dc);
+        KafkaConsumerConfig config = KafkaConsumerConfig.build(dc,isSSL);
         FlinkKafkaSourceConfigWrapper configWrapper = new FlinkKafkaSourceConfigWrapper(
                 config, outOfOrderlessInMin, idleSourceTimeout, fromTimestamp);
         FlinkKafkaConsumerFactory factory = new FlinkKafkaConsumerFactory(configWrapper);

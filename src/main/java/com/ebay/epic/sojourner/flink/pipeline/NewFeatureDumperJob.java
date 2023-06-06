@@ -31,7 +31,7 @@ public class NewFeatureDumperJob extends KafkaToHdfsBaseJob {
             DataStream<MiscEvent> sourceDs = newFeatureDumperJob.consumerBuilder(see,
                     DataCenter.valueOf(dc.toUpperCase()),
                     new MiscEventKafkaDeSerSchemaWrapper(
-                            new MiscEventDeserializationSchema()));
+                            new MiscEventDeserializationSchema()),true);
             sourcesList.add(sourceDs);
         }
         DataStream<MiscEvent> dsUnion = sourcesList.get(0);

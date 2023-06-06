@@ -7,6 +7,7 @@ import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.config.SaslConfigs;
+import org.apache.kafka.common.config.SslConfigs;
 
 import java.util.Properties;
 
@@ -22,10 +23,10 @@ public abstract class KafkaCommonConfig {
     private ConfigManager configManager;
 
     public KafkaCommonConfig(DataCenter dc) {
-        this(dc, true);
+        this(dc, true,false);
     }
 
-    public KafkaCommonConfig(DataCenter dc, boolean isDerived) {
+    public KafkaCommonConfig(DataCenter dc, boolean isDerived,boolean isSSL) {
         this.dc = dc;
         this.configManager = new ConfigManager(dc, isDerived);
         properties = new Properties();
@@ -33,7 +34,12 @@ public abstract class KafkaCommonConfig {
         Preconditions.checkNotNull(brokers, "Cannot find datacenter kafka bootstrap servers");
         groupId = getGId();
         Preconditions.checkState(StringUtils.isNotBlank(groupId));
-        setAuthentication(properties);
+        if(isSSL)
+        {
+            setAuthenticationWithSSL(properties);
+        }else {
+            setAuthentication(properties);
+        }
         buildProperties(properties);
     }
 
@@ -57,5 +63,19 @@ public abstract class KafkaCommonConfig {
                         getString(Property.RHEOS_CLIENT_IAF_SECRET),
                         getString(Property.RHEOS_CLIENT_IAF_ENV));
         props.put(SaslConfigs.SASL_JAAS_CONFIG, saslJaasConfig);
+    }
+
+    private void setAuthenticationWithSSL(Properties props) {
+        props.put(SaslConfigs.SASL_MECHANISM, "IAF");
+        props.put("security.protocol", "SASL_SSL");
+        final String saslJaasConfig =
+                String.format(
+                        "io.ebay.rheos.kafka.security.iaf.IAFLoginModule required " +
+                                "iafConsumerId=\"%s\" iafSecret=\"%s\" iafEnv=\"%s\";",
+                        getString(Property.RHEOS_CLIENT_ID),
+                        getString(Property.RHEOS_CLIENT_IAF_SECRET),
+                        getString(Property.RHEOS_CLIENT_IAF_ENV));
+        props.put(SaslConfigs.SASL_JAAS_CONFIG, saslJaasConfig);
+        props.put(SslConfigs.SSL_ENDPOINT_IDENTIFICATION_ALGORITHM_CONFIG, "");
     }
 }
