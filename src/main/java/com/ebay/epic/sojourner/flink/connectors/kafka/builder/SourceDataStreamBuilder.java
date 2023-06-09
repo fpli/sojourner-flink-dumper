@@ -46,7 +46,7 @@ public class SourceDataStreamBuilder<T> {
     }
 
     public SourceDataStreamBuilder<T> uid(String uid) {
-        this.uid = configManager.getOPUid(uid);
+        this.uid = configManager.getOPUid(uid)+DOMAIN_DEL+ dc;
         return this;
     }
 
