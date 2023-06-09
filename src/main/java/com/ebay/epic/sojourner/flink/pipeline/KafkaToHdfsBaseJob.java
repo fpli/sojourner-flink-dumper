@@ -57,7 +57,7 @@ public class KafkaToHdfsBaseJob {
         // 1.2 Assign timestamps and emit watermarks.
         DataStream<T> rawEventDataStream = dataStreamBuilder
                 .operatorName(SOURCE_OPERATOR_NAME_BASE)
-                .uid(SOURCE_UID_BASE)
+                .uidWithDC(SOURCE_UID_BASE)
                 .slotGroup(SOURCE_SLOT_SHARE_GROUP_BASE)
                 .outOfOrderlessInMin(FLINK_APP_SOURCE_OFO_BASE)
                 .fromTimestamp(FLINK_APP_SOURCE_FROM_TS_BASE)
