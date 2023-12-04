@@ -6,7 +6,7 @@
 
   <groupId>com.ebay.sojourner</groupId>
   <artifactId>sojourner-flink-dumper</artifactId>
-  <version>1.2.0</version>
+  <version>1.2.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <properties>
@@ -271,6 +271,13 @@
       <artifactId>flink-parquet_${scala.binary.version}</artifactId>
       <version>${flink.version}</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-connector-files -->
+    <dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-connector-files</artifactId>
+      <version>1.13.5</version>
+    </dependency>
+
     <dependency>
       <groupId>org.apache.parquet</groupId>
       <artifactId>parquet-avro</artifactId>

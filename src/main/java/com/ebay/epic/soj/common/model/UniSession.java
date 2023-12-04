@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ebay.epic.sojourner.common.model;
+package com.ebay.epic.soj.common.model;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class UniSession extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 4331492280397650024L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"UniSession\",\"namespace\":\"com.ebay.epic.sojourner.common.model\",\"fields\":[{\"name\":\"rheosHeader\",\"type\":{\"type\":\"record\",\"name\":\"RheosHeader\",\"fields\":[{\"name\":\"eventCreateTimestamp\",\"type\":\"long\"},{\"name\":\"eventSentTimestamp\",\"type\":\"long\"},{\"name\":\"schemaId\",\"type\":\"int\"},{\"name\":\"eventId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"producerId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]},\"doc\":\"Rheos header\"},{\"name\":\"guid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from ubisession guid\"},{\"name\":\"globalSessionId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from unisession globalSessionId\"},{\"name\":\"absStartTimestamp\",\"type\":[\"null\",\"long\"],\"doc\":\"from unisession absStartTimestamp\"},{\"name\":\"absEndTimestamp\",\"type\":[\"null\",\"long\"],\"doc\":\"from unisession absEndTimestamp\"},{\"name\":\"sessionStartDt\",\"type\":[\"null\",\"long\"],\"doc\":\"from unisession sessionStartDt\"},{\"name\":\"trafficSource\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"traffic source\"},{\"name\":\"trafficSourceDetails\",\"type\":[\"null\",{\"type\":\"map\",\"values\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"avro.java.string\":\"String\",\"default\":{}}],\"doc\":\"\"},{\"name\":\"ubiSessIds\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]},{\"name\":\"ubiSessSkeys\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}]},{\"name\":\"autotrackSessIds\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}]},{\"name\":\"autotrackSessSkeys\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}]},{\"name\":\"botFlag\",\"type\":{\"type\":\"record\",\"name\":\"BotFlag\",\"fields\":[{\"name\":\"surface\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]},{\"name\":\"ubi\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]},{\"name\":\"utp\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]}]}},{\"name\":\"others\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"}},{\"name\":\"isOpen\",\"type\":[\"null\",\"boolean\"],\"doc\":\"to identify open or end\"},{\"name\":\"userId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from ubisession\",\"default\":null},{\"name\":\"firstAppId\",\"type\":[\"null\",\"int\"],\"doc\":\"from ubisession\",\"default\":null},{\"name\":\"cobrand\",\"type\":[\"null\",\"int\"],\"doc\":\"from ubisession \",\"default\":null},{\"name\":\"userAgent\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from ubisession\",\"default\":null},{\"name\":\"experience\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from ubisession\",\"default\":null},{\"name\":\"experienceLevel1\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from ubisession\",\"default\":null},{\"name\":\"experienceLevel2\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from ubisession\",\"default\":null},{\"name\":\"clavSessions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ClavSession\",\"fields\":[{\"name\":\"sessionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"siteId\",\"type\":\"int\"},{\"name\":\"botFlag\",\"type\":\"long\"},{\"name\":\"validPageCount\",\"type\":\"int\"},{\"name\":\"duration\",\"type\":\"long\"},{\"name\":\"startPageId\",\"type\":\"int\"},{\"name\":\"exitPageId\",\"type\":\"int\"},{\"name\":\"startTimestamp\",\"type\":\"long\"},{\"name\":\"exitTimestamp\",\"type\":\"long\"},{\"name\":\"grCount\",\"type\":\"int\"},{\"name\":\"gr1Count\",\"type\":\"int\"},{\"name\":\"homepageCount\",\"type\":\"int\"},{\"name\":\"viCount\",\"type\":\"int\"},{\"name\":\"signinCount\",\"type\":\"int\"},{\"name\":\"myebayCount\",\"type\":\"int\"},{\"name\":\"others\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"}}]}}],\"doc\":\"from ubisession\",\"default\":null}]}");
+  private static final long serialVersionUID = 1532944023630273954L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"UniSession\",\"namespace\":\"com.ebay.epic.soj.common.model\",\"fields\":[{\"name\":\"rheosHeader\",\"type\":{\"type\":\"record\",\"name\":\"RheosHeader\",\"fields\":[{\"name\":\"eventCreateTimestamp\",\"type\":\"long\"},{\"name\":\"eventSentTimestamp\",\"type\":\"long\"},{\"name\":\"schemaId\",\"type\":\"int\"},{\"name\":\"eventId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}]},{\"name\":\"producerId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]},\"doc\":\"Rheos header\"},{\"name\":\"guid\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from ubisession guid\"},{\"name\":\"globalSessionId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from unisession globalSessionId\"},{\"name\":\"absStartTimestamp\",\"type\":[\"null\",\"long\"],\"doc\":\"from unisession absStartTimestamp\"},{\"name\":\"absEndTimestamp\",\"type\":[\"null\",\"long\"],\"doc\":\"from unisession absEndTimestamp\"},{\"name\":\"sessionStartDt\",\"type\":[\"null\",\"long\"],\"doc\":\"from unisession sessionStartDt\"},{\"name\":\"trafficSource\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"traffic source\"},{\"name\":\"trafficSourceDetails\",\"type\":[\"null\",{\"type\":\"map\",\"values\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"avro.java.string\":\"String\",\"default\":{}}],\"doc\":\"\"},{\"name\":\"ubiSessIds\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]},{\"name\":\"ubiSessSkeys\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}]},{\"name\":\"autotrackSessIds\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}]},{\"name\":\"autotrackSessSkeys\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"long\"}]},{\"name\":\"botFlag\",\"type\":{\"type\":\"record\",\"name\":\"BotFlag\",\"fields\":[{\"name\":\"surface\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]},{\"name\":\"ubi\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]},{\"name\":\"utp\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]}]}},{\"name\":\"others\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"}},{\"name\":\"isOpen\",\"type\":[\"null\",\"boolean\"],\"doc\":\"to identify open or end\"},{\"name\":\"userId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from ubisession\",\"default\":null},{\"name\":\"firstAppId\",\"type\":[\"null\",\"int\"],\"doc\":\"from ubisession\",\"default\":null},{\"name\":\"cobrand\",\"type\":[\"null\",\"int\"],\"doc\":\"from ubisession \",\"default\":null},{\"name\":\"userAgent\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from ubisession\",\"default\":null},{\"name\":\"experience\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from ubisession\",\"default\":null},{\"name\":\"experienceLevel1\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from ubisession\",\"default\":null},{\"name\":\"experienceLevel2\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"from ubisession\",\"default\":null},{\"name\":\"clavSessions\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ClavSession\",\"fields\":[{\"name\":\"sessionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"siteId\",\"type\":\"int\"},{\"name\":\"botFlag\",\"type\":\"long\"},{\"name\":\"validPageCount\",\"type\":\"int\"},{\"name\":\"duration\",\"type\":\"long\"},{\"name\":\"startPageId\",\"type\":\"int\"},{\"name\":\"exitPageId\",\"type\":\"int\"},{\"name\":\"startTimestamp\",\"type\":\"long\"},{\"name\":\"exitTimestamp\",\"type\":\"long\"},{\"name\":\"grCount\",\"type\":\"int\"},{\"name\":\"gr1Count\",\"type\":\"int\"},{\"name\":\"homepageCount\",\"type\":\"int\"},{\"name\":\"viCount\",\"type\":\"int\"},{\"name\":\"signinCount\",\"type\":\"int\"},{\"name\":\"myebayCount\",\"type\":\"int\"},{\"name\":\"others\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"}}]}}],\"doc\":\"from ubisession\",\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -52,7 +52,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
   }
 
   /** Rheos header */
-  @Deprecated public com.ebay.epic.sojourner.common.model.RheosHeader rheosHeader;
+  @Deprecated public com.ebay.epic.soj.common.model.RheosHeader rheosHeader;
   /** from ubisession guid */
   @Deprecated public java.lang.String guid;
   /** from unisession globalSessionId */
@@ -71,7 +71,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
   @Deprecated public java.util.List<java.lang.Long> ubiSessSkeys;
   @Deprecated public java.util.List<java.lang.Long> autotrackSessIds;
   @Deprecated public java.util.List<java.lang.Long> autotrackSessSkeys;
-  @Deprecated public com.ebay.epic.sojourner.common.model.BotFlag botFlag;
+  @Deprecated public com.ebay.epic.soj.common.model.BotFlag botFlag;
   @Deprecated public java.util.Map<java.lang.String,java.lang.String> others;
   /** to identify open or end */
   @Deprecated public java.lang.Boolean isOpen;
@@ -90,7 +90,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
   /** from ubisession */
   @Deprecated public java.lang.String experienceLevel2;
   /** from ubisession */
-  @Deprecated public java.util.List<com.ebay.epic.sojourner.common.model.ClavSession> clavSessions;
+  @Deprecated public java.util.List<com.ebay.epic.soj.common.model.ClavSession> clavSessions;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -125,7 +125,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
    * @param experienceLevel2 from ubisession
    * @param clavSessions from ubisession
    */
-  public UniSession(com.ebay.epic.sojourner.common.model.RheosHeader rheosHeader, java.lang.String guid, java.lang.String globalSessionId, java.lang.Long absStartTimestamp, java.lang.Long absEndTimestamp, java.lang.Long sessionStartDt, java.lang.String trafficSource, java.util.Map<java.lang.String,java.lang.String> trafficSourceDetails, java.util.List<java.lang.String> ubiSessIds, java.util.List<java.lang.Long> ubiSessSkeys, java.util.List<java.lang.Long> autotrackSessIds, java.util.List<java.lang.Long> autotrackSessSkeys, com.ebay.epic.sojourner.common.model.BotFlag botFlag, java.util.Map<java.lang.String,java.lang.String> others, java.lang.Boolean isOpen, java.lang.String userId, java.lang.Integer firstAppId, java.lang.Integer cobrand, java.lang.String userAgent, java.lang.String experience, java.lang.String experienceLevel1, java.lang.String experienceLevel2, java.util.List<com.ebay.epic.sojourner.common.model.ClavSession> clavSessions) {
+  public UniSession(com.ebay.epic.soj.common.model.RheosHeader rheosHeader, java.lang.String guid, java.lang.String globalSessionId, java.lang.Long absStartTimestamp, java.lang.Long absEndTimestamp, java.lang.Long sessionStartDt, java.lang.String trafficSource, java.util.Map<java.lang.String,java.lang.String> trafficSourceDetails, java.util.List<java.lang.String> ubiSessIds, java.util.List<java.lang.Long> ubiSessSkeys, java.util.List<java.lang.Long> autotrackSessIds, java.util.List<java.lang.Long> autotrackSessSkeys, com.ebay.epic.soj.common.model.BotFlag botFlag, java.util.Map<java.lang.String,java.lang.String> others, java.lang.Boolean isOpen, java.lang.String userId, java.lang.Integer firstAppId, java.lang.Integer cobrand, java.lang.String userAgent, java.lang.String experience, java.lang.String experienceLevel1, java.lang.String experienceLevel2, java.util.List<com.ebay.epic.soj.common.model.ClavSession> clavSessions) {
     this.rheosHeader = rheosHeader;
     this.guid = guid;
     this.globalSessionId = globalSessionId;
@@ -186,7 +186,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: rheosHeader = (com.ebay.epic.sojourner.common.model.RheosHeader)value$; break;
+    case 0: rheosHeader = (com.ebay.epic.soj.common.model.RheosHeader)value$; break;
     case 1: guid = (java.lang.String)value$; break;
     case 2: globalSessionId = (java.lang.String)value$; break;
     case 3: absStartTimestamp = (java.lang.Long)value$; break;
@@ -198,7 +198,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
     case 9: ubiSessSkeys = (java.util.List<java.lang.Long>)value$; break;
     case 10: autotrackSessIds = (java.util.List<java.lang.Long>)value$; break;
     case 11: autotrackSessSkeys = (java.util.List<java.lang.Long>)value$; break;
-    case 12: botFlag = (com.ebay.epic.sojourner.common.model.BotFlag)value$; break;
+    case 12: botFlag = (com.ebay.epic.soj.common.model.BotFlag)value$; break;
     case 13: others = (java.util.Map<java.lang.String,java.lang.String>)value$; break;
     case 14: isOpen = (java.lang.Boolean)value$; break;
     case 15: userId = (java.lang.String)value$; break;
@@ -208,7 +208,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
     case 19: experience = (java.lang.String)value$; break;
     case 20: experienceLevel1 = (java.lang.String)value$; break;
     case 21: experienceLevel2 = (java.lang.String)value$; break;
-    case 22: clavSessions = (java.util.List<com.ebay.epic.sojourner.common.model.ClavSession>)value$; break;
+    case 22: clavSessions = (java.util.List<com.ebay.epic.soj.common.model.ClavSession>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -217,7 +217,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'rheosHeader' field.
    * @return Rheos header
    */
-  public com.ebay.epic.sojourner.common.model.RheosHeader getRheosHeader() {
+  public com.ebay.epic.soj.common.model.RheosHeader getRheosHeader() {
     return rheosHeader;
   }
 
@@ -226,7 +226,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
    * Rheos header
    * @param value the value to set.
    */
-  public void setRheosHeader(com.ebay.epic.sojourner.common.model.RheosHeader value) {
+  public void setRheosHeader(com.ebay.epic.soj.common.model.RheosHeader value) {
     this.rheosHeader = value;
   }
 
@@ -417,7 +417,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'botFlag' field.
    * @return The value of the 'botFlag' field.
    */
-  public com.ebay.epic.sojourner.common.model.BotFlag getBotFlag() {
+  public com.ebay.epic.soj.common.model.BotFlag getBotFlag() {
     return botFlag;
   }
 
@@ -425,7 +425,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'botFlag' field.
    * @param value the value to set.
    */
-  public void setBotFlag(com.ebay.epic.sojourner.common.model.BotFlag value) {
+  public void setBotFlag(com.ebay.epic.soj.common.model.BotFlag value) {
     this.botFlag = value;
   }
 
@@ -585,7 +585,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'clavSessions' field.
    * @return from ubisession
    */
-  public java.util.List<com.ebay.epic.sojourner.common.model.ClavSession> getClavSessions() {
+  public java.util.List<com.ebay.epic.soj.common.model.ClavSession> getClavSessions() {
     return clavSessions;
   }
 
@@ -594,7 +594,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
    * from ubisession
    * @param value the value to set.
    */
-  public void setClavSessions(java.util.List<com.ebay.epic.sojourner.common.model.ClavSession> value) {
+  public void setClavSessions(java.util.List<com.ebay.epic.soj.common.model.ClavSession> value) {
     this.clavSessions = value;
   }
 
@@ -602,8 +602,8 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
    * Creates a new UniSession RecordBuilder.
    * @return A new UniSession RecordBuilder
    */
-  public static com.ebay.epic.sojourner.common.model.UniSession.Builder newBuilder() {
-    return new com.ebay.epic.sojourner.common.model.UniSession.Builder();
+  public static com.ebay.epic.soj.common.model.UniSession.Builder newBuilder() {
+    return new com.ebay.epic.soj.common.model.UniSession.Builder();
   }
 
   /**
@@ -611,8 +611,8 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing builder to copy.
    * @return A new UniSession RecordBuilder
    */
-  public static com.ebay.epic.sojourner.common.model.UniSession.Builder newBuilder(com.ebay.epic.sojourner.common.model.UniSession.Builder other) {
-    return new com.ebay.epic.sojourner.common.model.UniSession.Builder(other);
+  public static com.ebay.epic.soj.common.model.UniSession.Builder newBuilder(com.ebay.epic.soj.common.model.UniSession.Builder other) {
+    return new com.ebay.epic.soj.common.model.UniSession.Builder(other);
   }
 
   /**
@@ -620,8 +620,8 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
    * @param other The existing instance to copy.
    * @return A new UniSession RecordBuilder
    */
-  public static com.ebay.epic.sojourner.common.model.UniSession.Builder newBuilder(com.ebay.epic.sojourner.common.model.UniSession other) {
-    return new com.ebay.epic.sojourner.common.model.UniSession.Builder(other);
+  public static com.ebay.epic.soj.common.model.UniSession.Builder newBuilder(com.ebay.epic.soj.common.model.UniSession other) {
+    return new com.ebay.epic.soj.common.model.UniSession.Builder(other);
   }
 
   /**
@@ -631,8 +631,8 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
     implements org.apache.avro.data.RecordBuilder<UniSession> {
 
     /** Rheos header */
-    private com.ebay.epic.sojourner.common.model.RheosHeader rheosHeader;
-    private com.ebay.epic.sojourner.common.model.RheosHeader.Builder rheosHeaderBuilder;
+    private com.ebay.epic.soj.common.model.RheosHeader rheosHeader;
+    private com.ebay.epic.soj.common.model.RheosHeader.Builder rheosHeaderBuilder;
     /** from ubisession guid */
     private java.lang.String guid;
     /** from unisession globalSessionId */
@@ -651,8 +651,8 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
     private java.util.List<java.lang.Long> ubiSessSkeys;
     private java.util.List<java.lang.Long> autotrackSessIds;
     private java.util.List<java.lang.Long> autotrackSessSkeys;
-    private com.ebay.epic.sojourner.common.model.BotFlag botFlag;
-    private com.ebay.epic.sojourner.common.model.BotFlag.Builder botFlagBuilder;
+    private com.ebay.epic.soj.common.model.BotFlag botFlag;
+    private com.ebay.epic.soj.common.model.BotFlag.Builder botFlagBuilder;
     private java.util.Map<java.lang.String,java.lang.String> others;
     /** to identify open or end */
     private java.lang.Boolean isOpen;
@@ -671,7 +671,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
     /** from ubisession */
     private java.lang.String experienceLevel2;
     /** from ubisession */
-    private java.util.List<com.ebay.epic.sojourner.common.model.ClavSession> clavSessions;
+    private java.util.List<com.ebay.epic.soj.common.model.ClavSession> clavSessions;
 
     /** Creates a new Builder */
     private Builder() {
@@ -682,14 +682,14 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ebay.epic.sojourner.common.model.UniSession.Builder other) {
+    private Builder(com.ebay.epic.soj.common.model.UniSession.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.rheosHeader)) {
         this.rheosHeader = data().deepCopy(fields()[0].schema(), other.rheosHeader);
         fieldSetFlags()[0] = true;
       }
       if (other.hasRheosHeaderBuilder()) {
-        this.rheosHeaderBuilder = com.ebay.epic.sojourner.common.model.RheosHeader.newBuilder(other.getRheosHeaderBuilder());
+        this.rheosHeaderBuilder = com.ebay.epic.soj.common.model.RheosHeader.newBuilder(other.getRheosHeaderBuilder());
       }
       if (isValidValue(fields()[1], other.guid)) {
         this.guid = data().deepCopy(fields()[1].schema(), other.guid);
@@ -740,7 +740,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
         fieldSetFlags()[12] = true;
       }
       if (other.hasBotFlagBuilder()) {
-        this.botFlagBuilder = com.ebay.epic.sojourner.common.model.BotFlag.newBuilder(other.getBotFlagBuilder());
+        this.botFlagBuilder = com.ebay.epic.soj.common.model.BotFlag.newBuilder(other.getBotFlagBuilder());
       }
       if (isValidValue(fields()[13], other.others)) {
         this.others = data().deepCopy(fields()[13].schema(), other.others);
@@ -788,7 +788,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
      * Creates a Builder by copying an existing UniSession instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ebay.epic.sojourner.common.model.UniSession other) {
+    private Builder(com.ebay.epic.soj.common.model.UniSession other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.rheosHeader)) {
         this.rheosHeader = data().deepCopy(fields()[0].schema(), other.rheosHeader);
@@ -891,7 +891,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * Rheos header
       * @return The value.
       */
-    public com.ebay.epic.sojourner.common.model.RheosHeader getRheosHeader() {
+    public com.ebay.epic.soj.common.model.RheosHeader getRheosHeader() {
       return rheosHeader;
     }
 
@@ -901,7 +901,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'rheosHeader'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setRheosHeader(com.ebay.epic.sojourner.common.model.RheosHeader value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setRheosHeader(com.ebay.epic.soj.common.model.RheosHeader value) {
       validate(fields()[0], value);
       this.rheosHeaderBuilder = null;
       this.rheosHeader = value;
@@ -923,12 +923,12 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
      * Rheos header
      * @return This builder.
      */
-    public com.ebay.epic.sojourner.common.model.RheosHeader.Builder getRheosHeaderBuilder() {
+    public com.ebay.epic.soj.common.model.RheosHeader.Builder getRheosHeaderBuilder() {
       if (rheosHeaderBuilder == null) {
         if (hasRheosHeader()) {
-          setRheosHeaderBuilder(com.ebay.epic.sojourner.common.model.RheosHeader.newBuilder(rheosHeader));
+          setRheosHeaderBuilder(com.ebay.epic.soj.common.model.RheosHeader.newBuilder(rheosHeader));
         } else {
-          setRheosHeaderBuilder(com.ebay.epic.sojourner.common.model.RheosHeader.newBuilder());
+          setRheosHeaderBuilder(com.ebay.epic.soj.common.model.RheosHeader.newBuilder());
         }
       }
       return rheosHeaderBuilder;
@@ -940,7 +940,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
      * @param value The builder instance that must be set.
      * @return This builder.
      */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setRheosHeaderBuilder(com.ebay.epic.sojourner.common.model.RheosHeader.Builder value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setRheosHeaderBuilder(com.ebay.epic.soj.common.model.RheosHeader.Builder value) {
       clearRheosHeader();
       rheosHeaderBuilder = value;
       return this;
@@ -960,7 +960,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * Rheos header
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearRheosHeader() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearRheosHeader() {
       rheosHeader = null;
       rheosHeaderBuilder = null;
       fieldSetFlags()[0] = false;
@@ -982,7 +982,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'guid'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setGuid(java.lang.String value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setGuid(java.lang.String value) {
       validate(fields()[1], value);
       this.guid = value;
       fieldSetFlags()[1] = true;
@@ -1004,7 +1004,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from ubisession guid
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearGuid() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearGuid() {
       guid = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -1025,7 +1025,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'globalSessionId'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setGlobalSessionId(java.lang.String value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setGlobalSessionId(java.lang.String value) {
       validate(fields()[2], value);
       this.globalSessionId = value;
       fieldSetFlags()[2] = true;
@@ -1047,7 +1047,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from unisession globalSessionId
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearGlobalSessionId() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearGlobalSessionId() {
       globalSessionId = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -1068,7 +1068,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'absStartTimestamp'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setAbsStartTimestamp(java.lang.Long value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setAbsStartTimestamp(java.lang.Long value) {
       validate(fields()[3], value);
       this.absStartTimestamp = value;
       fieldSetFlags()[3] = true;
@@ -1090,7 +1090,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from unisession absStartTimestamp
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearAbsStartTimestamp() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearAbsStartTimestamp() {
       absStartTimestamp = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -1111,7 +1111,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'absEndTimestamp'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setAbsEndTimestamp(java.lang.Long value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setAbsEndTimestamp(java.lang.Long value) {
       validate(fields()[4], value);
       this.absEndTimestamp = value;
       fieldSetFlags()[4] = true;
@@ -1133,7 +1133,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from unisession absEndTimestamp
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearAbsEndTimestamp() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearAbsEndTimestamp() {
       absEndTimestamp = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -1154,7 +1154,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'sessionStartDt'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setSessionStartDt(java.lang.Long value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setSessionStartDt(java.lang.Long value) {
       validate(fields()[5], value);
       this.sessionStartDt = value;
       fieldSetFlags()[5] = true;
@@ -1176,7 +1176,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from unisession sessionStartDt
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearSessionStartDt() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearSessionStartDt() {
       sessionStartDt = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -1197,7 +1197,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'trafficSource'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setTrafficSource(java.lang.String value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setTrafficSource(java.lang.String value) {
       validate(fields()[6], value);
       this.trafficSource = value;
       fieldSetFlags()[6] = true;
@@ -1219,7 +1219,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * traffic source
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearTrafficSource() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearTrafficSource() {
       trafficSource = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -1240,7 +1240,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'trafficSourceDetails'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setTrafficSourceDetails(java.util.Map<java.lang.String,java.lang.String> value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setTrafficSourceDetails(java.util.Map<java.lang.String,java.lang.String> value) {
       validate(fields()[7], value);
       this.trafficSourceDetails = value;
       fieldSetFlags()[7] = true;
@@ -1262,7 +1262,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * 
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearTrafficSourceDetails() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearTrafficSourceDetails() {
       trafficSourceDetails = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -1281,7 +1281,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'ubiSessIds'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setUbiSessIds(java.util.List<java.lang.String> value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setUbiSessIds(java.util.List<java.lang.String> value) {
       validate(fields()[8], value);
       this.ubiSessIds = value;
       fieldSetFlags()[8] = true;
@@ -1301,7 +1301,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'ubiSessIds' field.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearUbiSessIds() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearUbiSessIds() {
       ubiSessIds = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -1320,7 +1320,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'ubiSessSkeys'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setUbiSessSkeys(java.util.List<java.lang.Long> value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setUbiSessSkeys(java.util.List<java.lang.Long> value) {
       validate(fields()[9], value);
       this.ubiSessSkeys = value;
       fieldSetFlags()[9] = true;
@@ -1340,7 +1340,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'ubiSessSkeys' field.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearUbiSessSkeys() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearUbiSessSkeys() {
       ubiSessSkeys = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -1359,7 +1359,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'autotrackSessIds'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setAutotrackSessIds(java.util.List<java.lang.Long> value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setAutotrackSessIds(java.util.List<java.lang.Long> value) {
       validate(fields()[10], value);
       this.autotrackSessIds = value;
       fieldSetFlags()[10] = true;
@@ -1379,7 +1379,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'autotrackSessIds' field.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearAutotrackSessIds() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearAutotrackSessIds() {
       autotrackSessIds = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -1398,7 +1398,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'autotrackSessSkeys'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setAutotrackSessSkeys(java.util.List<java.lang.Long> value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setAutotrackSessSkeys(java.util.List<java.lang.Long> value) {
       validate(fields()[11], value);
       this.autotrackSessSkeys = value;
       fieldSetFlags()[11] = true;
@@ -1418,7 +1418,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'autotrackSessSkeys' field.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearAutotrackSessSkeys() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearAutotrackSessSkeys() {
       autotrackSessSkeys = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -1428,7 +1428,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'botFlag' field.
       * @return The value.
       */
-    public com.ebay.epic.sojourner.common.model.BotFlag getBotFlag() {
+    public com.ebay.epic.soj.common.model.BotFlag getBotFlag() {
       return botFlag;
     }
 
@@ -1437,7 +1437,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'botFlag'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setBotFlag(com.ebay.epic.sojourner.common.model.BotFlag value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setBotFlag(com.ebay.epic.soj.common.model.BotFlag value) {
       validate(fields()[12], value);
       this.botFlagBuilder = null;
       this.botFlag = value;
@@ -1457,12 +1457,12 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
      * Gets the Builder instance for the 'botFlag' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public com.ebay.epic.sojourner.common.model.BotFlag.Builder getBotFlagBuilder() {
+    public com.ebay.epic.soj.common.model.BotFlag.Builder getBotFlagBuilder() {
       if (botFlagBuilder == null) {
         if (hasBotFlag()) {
-          setBotFlagBuilder(com.ebay.epic.sojourner.common.model.BotFlag.newBuilder(botFlag));
+          setBotFlagBuilder(com.ebay.epic.soj.common.model.BotFlag.newBuilder(botFlag));
         } else {
-          setBotFlagBuilder(com.ebay.epic.sojourner.common.model.BotFlag.newBuilder());
+          setBotFlagBuilder(com.ebay.epic.soj.common.model.BotFlag.newBuilder());
         }
       }
       return botFlagBuilder;
@@ -1473,7 +1473,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
      * @param value The builder instance that must be set.
      * @return This builder.
      */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setBotFlagBuilder(com.ebay.epic.sojourner.common.model.BotFlag.Builder value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setBotFlagBuilder(com.ebay.epic.soj.common.model.BotFlag.Builder value) {
       clearBotFlag();
       botFlagBuilder = value;
       return this;
@@ -1491,7 +1491,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'botFlag' field.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearBotFlag() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearBotFlag() {
       botFlag = null;
       botFlagBuilder = null;
       fieldSetFlags()[12] = false;
@@ -1511,7 +1511,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'others'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setOthers(java.util.Map<java.lang.String,java.lang.String> value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setOthers(java.util.Map<java.lang.String,java.lang.String> value) {
       validate(fields()[13], value);
       this.others = value;
       fieldSetFlags()[13] = true;
@@ -1531,7 +1531,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * Clears the value of the 'others' field.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearOthers() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearOthers() {
       others = null;
       fieldSetFlags()[13] = false;
       return this;
@@ -1552,7 +1552,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'isOpen'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setIsOpen(java.lang.Boolean value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setIsOpen(java.lang.Boolean value) {
       validate(fields()[14], value);
       this.isOpen = value;
       fieldSetFlags()[14] = true;
@@ -1574,7 +1574,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * to identify open or end
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearIsOpen() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearIsOpen() {
       isOpen = null;
       fieldSetFlags()[14] = false;
       return this;
@@ -1595,7 +1595,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'userId'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setUserId(java.lang.String value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setUserId(java.lang.String value) {
       validate(fields()[15], value);
       this.userId = value;
       fieldSetFlags()[15] = true;
@@ -1617,7 +1617,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from ubisession
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearUserId() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearUserId() {
       userId = null;
       fieldSetFlags()[15] = false;
       return this;
@@ -1638,7 +1638,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'firstAppId'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setFirstAppId(java.lang.Integer value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setFirstAppId(java.lang.Integer value) {
       validate(fields()[16], value);
       this.firstAppId = value;
       fieldSetFlags()[16] = true;
@@ -1660,7 +1660,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from ubisession
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearFirstAppId() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearFirstAppId() {
       firstAppId = null;
       fieldSetFlags()[16] = false;
       return this;
@@ -1681,7 +1681,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'cobrand'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setCobrand(java.lang.Integer value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setCobrand(java.lang.Integer value) {
       validate(fields()[17], value);
       this.cobrand = value;
       fieldSetFlags()[17] = true;
@@ -1703,7 +1703,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from ubisession 
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearCobrand() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearCobrand() {
       cobrand = null;
       fieldSetFlags()[17] = false;
       return this;
@@ -1724,7 +1724,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'userAgent'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setUserAgent(java.lang.String value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setUserAgent(java.lang.String value) {
       validate(fields()[18], value);
       this.userAgent = value;
       fieldSetFlags()[18] = true;
@@ -1746,7 +1746,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from ubisession
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearUserAgent() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearUserAgent() {
       userAgent = null;
       fieldSetFlags()[18] = false;
       return this;
@@ -1767,7 +1767,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'experience'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setExperience(java.lang.String value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setExperience(java.lang.String value) {
       validate(fields()[19], value);
       this.experience = value;
       fieldSetFlags()[19] = true;
@@ -1789,7 +1789,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from ubisession
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearExperience() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearExperience() {
       experience = null;
       fieldSetFlags()[19] = false;
       return this;
@@ -1810,7 +1810,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'experienceLevel1'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setExperienceLevel1(java.lang.String value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setExperienceLevel1(java.lang.String value) {
       validate(fields()[20], value);
       this.experienceLevel1 = value;
       fieldSetFlags()[20] = true;
@@ -1832,7 +1832,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from ubisession
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearExperienceLevel1() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearExperienceLevel1() {
       experienceLevel1 = null;
       fieldSetFlags()[20] = false;
       return this;
@@ -1853,7 +1853,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'experienceLevel2'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setExperienceLevel2(java.lang.String value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setExperienceLevel2(java.lang.String value) {
       validate(fields()[21], value);
       this.experienceLevel2 = value;
       fieldSetFlags()[21] = true;
@@ -1875,7 +1875,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from ubisession
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearExperienceLevel2() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearExperienceLevel2() {
       experienceLevel2 = null;
       fieldSetFlags()[21] = false;
       return this;
@@ -1886,7 +1886,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from ubisession
       * @return The value.
       */
-    public java.util.List<com.ebay.epic.sojourner.common.model.ClavSession> getClavSessions() {
+    public java.util.List<com.ebay.epic.soj.common.model.ClavSession> getClavSessions() {
       return clavSessions;
     }
 
@@ -1896,7 +1896,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'clavSessions'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder setClavSessions(java.util.List<com.ebay.epic.sojourner.common.model.ClavSession> value) {
+    public com.ebay.epic.soj.common.model.UniSession.Builder setClavSessions(java.util.List<com.ebay.epic.soj.common.model.ClavSession> value) {
       validate(fields()[22], value);
       this.clavSessions = value;
       fieldSetFlags()[22] = true;
@@ -1918,7 +1918,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
       * from ubisession
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.UniSession.Builder clearClavSessions() {
+    public com.ebay.epic.soj.common.model.UniSession.Builder clearClavSessions() {
       clavSessions = null;
       fieldSetFlags()[22] = false;
       return this;
@@ -1932,7 +1932,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
         if (rheosHeaderBuilder != null) {
           record.rheosHeader = this.rheosHeaderBuilder.build();
         } else {
-          record.rheosHeader = fieldSetFlags()[0] ? this.rheosHeader : (com.ebay.epic.sojourner.common.model.RheosHeader) defaultValue(fields()[0]);
+          record.rheosHeader = fieldSetFlags()[0] ? this.rheosHeader : (com.ebay.epic.soj.common.model.RheosHeader) defaultValue(fields()[0]);
         }
         record.guid = fieldSetFlags()[1] ? this.guid : (java.lang.String) defaultValue(fields()[1]);
         record.globalSessionId = fieldSetFlags()[2] ? this.globalSessionId : (java.lang.String) defaultValue(fields()[2]);
@@ -1948,7 +1948,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
         if (botFlagBuilder != null) {
           record.botFlag = this.botFlagBuilder.build();
         } else {
-          record.botFlag = fieldSetFlags()[12] ? this.botFlag : (com.ebay.epic.sojourner.common.model.BotFlag) defaultValue(fields()[12]);
+          record.botFlag = fieldSetFlags()[12] ? this.botFlag : (com.ebay.epic.soj.common.model.BotFlag) defaultValue(fields()[12]);
         }
         record.others = fieldSetFlags()[13] ? this.others : (java.util.Map<java.lang.String,java.lang.String>) defaultValue(fields()[13]);
         record.isOpen = fieldSetFlags()[14] ? this.isOpen : (java.lang.Boolean) defaultValue(fields()[14]);
@@ -1959,7 +1959,7 @@ public class UniSession extends org.apache.avro.specific.SpecificRecordBase impl
         record.experience = fieldSetFlags()[19] ? this.experience : (java.lang.String) defaultValue(fields()[19]);
         record.experienceLevel1 = fieldSetFlags()[20] ? this.experienceLevel1 : (java.lang.String) defaultValue(fields()[20]);
         record.experienceLevel2 = fieldSetFlags()[21] ? this.experienceLevel2 : (java.lang.String) defaultValue(fields()[21]);
-        record.clavSessions = fieldSetFlags()[22] ? this.clavSessions : (java.util.List<com.ebay.epic.sojourner.common.model.ClavSession>) defaultValue(fields()[22]);
+        record.clavSessions = fieldSetFlags()[22] ? this.clavSessions : (java.util.List<com.ebay.epic.soj.common.model.ClavSession>) defaultValue(fields()[22]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
