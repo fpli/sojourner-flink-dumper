@@ -48,6 +48,7 @@ SELECT
      , securityRules
      , serverCountry
      , streamId
+     , asn
      , row_number() OVER (PARTITION BY
     version
     , sojlib.soj_map_to_str(ewUsageInfo)
@@ -94,9 +95,10 @@ SELECT
     , securityRules
     , serverCountry
     , streamId
+    , asn
     ORDER BY reqTimeSec DESC) AS row_number
 FROM ubi_w.stg_event_akamai_bot_w
-WHERE dt = ${uow_from_date}
+WHERE dt = '${UOW_FROM_DATE}'
 ;
 
 
@@ -147,17 +149,12 @@ SELECT
      , securityRules
      , serverCountry
      , streamId
+     , asn
 FROM akamai_dedup_v e
 WHERE row_number = 1
 ;
 
-
-select count(*) from akamai_dedup_v;
-select count(*) from akamai_rt_dedup_v;
-select * from akamai_rt_dedup_v;
-
-
--- INSERT OVERWRITE TABLE ubi_w.akamai_event_bot PARTITION(dt='${uow_from_date}')
+INSERT OVERWRITE TABLE ubi_t.akamai_event_bot_ods PARTITION(dt='${UOW_FROM_DATE}')
 SELECT
     version
      , ewUsageInfo
@@ -192,7 +189,7 @@ SELECT
      , totalBytes
      , accLang
      , cookie
-     , `range`
+     , range
      , referer
      , xForwardedFor
      , maxAgeSec
@@ -204,6 +201,7 @@ SELECT
      , securityRules
      , serverCountry
      , streamId
+     , asn
 FROM akamai_rt_dedup_v
     CLUSTER BY reqTimeSec, reqId
 ;
