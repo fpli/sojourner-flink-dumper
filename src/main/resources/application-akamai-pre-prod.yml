@@ -2,7 +2,7 @@ kafka:
   consumer:
     topic:
       - behavior.akamailog.event
-    group-id: akamai-dumper
+    group-id: akamai-pp-dumper
     bootstrap-servers:
       lvs:
         - rhs-ejbwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
@@ -26,10 +26,11 @@ flink:
     name: Akamai Log dumper PP Pipeline
     parallelism:
       source: 10
+      process: 10
       sink:
         hdfs:
-          akamai_event: 15
-          akamai_watermark: 15
+          akamai_event: 10
+          akamai_watermark: 10
     operator-name:
       assgin-watermark: Akamai Log PP Watermark Assign
       extract-watermark: Akamai Log PP Timestamp Extract

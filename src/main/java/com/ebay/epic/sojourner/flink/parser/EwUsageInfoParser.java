@@ -49,8 +49,8 @@ public class EwUsageInfoParser implements FieldParser<GenericRecord, AkamaiLog> 
               if(part.length == 6) status = part[5];
               ewUsageInfo.put(eventPrefix + "Status", status);
             }
-          } else{
-            if (part[2] != null && ewEventPrefixLookup.containsKey(Integer.parseInt(part[2]))) {
+          } else {
+            if (part[2] != null && !"-".equals(part[2]) && ewEventPrefixLookup.containsKey(Integer.parseInt(part[2]))) {
               String eventPrefix = ewEventPrefixLookup.get(Integer.parseInt(part[2]));
               ewUsageInfo.put(eventPrefix + "OffReason", part[3]);
               ewUsageInfo.put(eventPrefix + "LogicExecuted", part[4]);
