@@ -26,10 +26,11 @@ flink:
     name: Akamai Log dumper Pipeline
     parallelism:
       source: 20
+      process: 20
       sink:
         hdfs:
-          akamai_event: 15
-          akamai_watermark: 15
+          akamai_event: 20
+          akamai_watermark: 20
     operator-name:
       assgin-watermark: Akamai Log Watermark Assign
       extract-watermark: Akamai Log Timestamp Extract
@@ -46,6 +47,8 @@ flink:
       watermark-process-progress: sojourner-ubd-akamai-log-watermark-delay-time
     checkpoint:
       data-dir: /opt/flink/akamailog/dumper/checkpoint
+    source:
+      from-timestamp: 0
 
 hdfs:
   dump:
