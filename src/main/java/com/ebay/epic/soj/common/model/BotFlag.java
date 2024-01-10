@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.ebay.epic.sojourner.common.model;
+package com.ebay.epic.soj.common.model;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class BotFlag extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 3304414310346156650L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BotFlag\",\"namespace\":\"com.ebay.epic.sojourner.common.model\",\"fields\":[{\"name\":\"surface\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]},{\"name\":\"ubi\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]},{\"name\":\"utp\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]}]}");
+  private static final long serialVersionUID = -6476025529410901172L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BotFlag\",\"namespace\":\"com.ebay.epic.soj.common.model\",\"fields\":[{\"name\":\"surface\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]},{\"name\":\"ubi\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]},{\"name\":\"utp\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"int\"}]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -148,8 +148,8 @@ public class BotFlag extends org.apache.avro.specific.SpecificRecordBase impleme
    * Creates a new BotFlag RecordBuilder.
    * @return A new BotFlag RecordBuilder
    */
-  public static com.ebay.epic.sojourner.common.model.BotFlag.Builder newBuilder() {
-    return new com.ebay.epic.sojourner.common.model.BotFlag.Builder();
+  public static com.ebay.epic.soj.common.model.BotFlag.Builder newBuilder() {
+    return new com.ebay.epic.soj.common.model.BotFlag.Builder();
   }
 
   /**
@@ -157,8 +157,8 @@ public class BotFlag extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing builder to copy.
    * @return A new BotFlag RecordBuilder
    */
-  public static com.ebay.epic.sojourner.common.model.BotFlag.Builder newBuilder(com.ebay.epic.sojourner.common.model.BotFlag.Builder other) {
-    return new com.ebay.epic.sojourner.common.model.BotFlag.Builder(other);
+  public static com.ebay.epic.soj.common.model.BotFlag.Builder newBuilder(com.ebay.epic.soj.common.model.BotFlag.Builder other) {
+    return new com.ebay.epic.soj.common.model.BotFlag.Builder(other);
   }
 
   /**
@@ -166,8 +166,8 @@ public class BotFlag extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing instance to copy.
    * @return A new BotFlag RecordBuilder
    */
-  public static com.ebay.epic.sojourner.common.model.BotFlag.Builder newBuilder(com.ebay.epic.sojourner.common.model.BotFlag other) {
-    return new com.ebay.epic.sojourner.common.model.BotFlag.Builder(other);
+  public static com.ebay.epic.soj.common.model.BotFlag.Builder newBuilder(com.ebay.epic.soj.common.model.BotFlag other) {
+    return new com.ebay.epic.soj.common.model.BotFlag.Builder(other);
   }
 
   /**
@@ -189,7 +189,7 @@ public class BotFlag extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.ebay.epic.sojourner.common.model.BotFlag.Builder other) {
+    private Builder(com.ebay.epic.soj.common.model.BotFlag.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.surface)) {
         this.surface = data().deepCopy(fields()[0].schema(), other.surface);
@@ -209,7 +209,7 @@ public class BotFlag extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing BotFlag instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.ebay.epic.sojourner.common.model.BotFlag other) {
+    private Builder(com.ebay.epic.soj.common.model.BotFlag other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.surface)) {
         this.surface = data().deepCopy(fields()[0].schema(), other.surface);
@@ -238,7 +238,7 @@ public class BotFlag extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'surface'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.BotFlag.Builder setSurface(java.util.List<java.lang.Integer> value) {
+    public com.ebay.epic.soj.common.model.BotFlag.Builder setSurface(java.util.List<java.lang.Integer> value) {
       validate(fields()[0], value);
       this.surface = value;
       fieldSetFlags()[0] = true;
@@ -258,7 +258,7 @@ public class BotFlag extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'surface' field.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.BotFlag.Builder clearSurface() {
+    public com.ebay.epic.soj.common.model.BotFlag.Builder clearSurface() {
       surface = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -277,7 +277,7 @@ public class BotFlag extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'ubi'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.BotFlag.Builder setUbi(java.util.List<java.lang.Integer> value) {
+    public com.ebay.epic.soj.common.model.BotFlag.Builder setUbi(java.util.List<java.lang.Integer> value) {
       validate(fields()[1], value);
       this.ubi = value;
       fieldSetFlags()[1] = true;
@@ -297,7 +297,7 @@ public class BotFlag extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'ubi' field.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.BotFlag.Builder clearUbi() {
+    public com.ebay.epic.soj.common.model.BotFlag.Builder clearUbi() {
       ubi = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -316,7 +316,7 @@ public class BotFlag extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'utp'.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.BotFlag.Builder setUtp(java.util.List<java.lang.Integer> value) {
+    public com.ebay.epic.soj.common.model.BotFlag.Builder setUtp(java.util.List<java.lang.Integer> value) {
       validate(fields()[2], value);
       this.utp = value;
       fieldSetFlags()[2] = true;
@@ -336,7 +336,7 @@ public class BotFlag extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'utp' field.
       * @return This builder.
       */
-    public com.ebay.epic.sojourner.common.model.BotFlag.Builder clearUtp() {
+    public com.ebay.epic.soj.common.model.BotFlag.Builder clearUtp() {
       utp = null;
       fieldSetFlags()[2] = false;
       return this;

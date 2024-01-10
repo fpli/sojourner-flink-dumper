@@ -1,0 +1,76 @@
+kafka:
+  consumer:
+    stream: behavior.unified.sojourner.nonbot
+    topic:
+      - behavior.unified.sojourner.nonbot.unisession-test-rno
+    group-id: unified-session-dumper-test
+    bootstrap-servers:
+      rno:
+        - rhs-ddcwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ddcwkiaa-kfk-2.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ddcwkiaa-kfk-3.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ddcwkiaa-kfk-4.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-ddcwkiaa-kfk-5.rheos-streaming-prod.vip.ebay.com:9092
+      lvs:
+        - rhs-adcwkiaa-kfk-1.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-adcwkiaa-kfk-2.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-adcwkiaa-kfk-3.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-adcwkiaa-kfk-4.rheos-streaming-prod.vip.ebay.com:9092
+        - rhs-adcwkiaa-kfk-5.rheos-streaming-prod.vip.ebay.com:9092
+    max-poll-records: 3000
+    # 16MB, default value is 50MB
+    fetch-max-bytes: 16777216
+    # 128KB, default value is 64KB
+    receive-buffer: 131072
+    fetch-max-wait-ms: 100
+    # 4MB, default value is 1MB
+    max-partitions-fetch-bytes: 4194304
+    auto-offset-reset: latest
+    partition-discovery-interval-ms: 60000
+flink:
+  app:
+    name: Unified Sessionization UniSession HDFS Load Pipeline
+    parallelism:
+      source: 50
+      process: 50
+      sink:
+        hdfs:
+          watermark_nonbot: 10
+          open_nonbot: 10
+          sameday_nonbot: 20
+          crossday_nonbot: 10
+    operator-name:
+      source: consumer operator
+      process: process operator
+      sink: sink operator
+    uid:
+      source: consumer-operator
+      process: process-operator
+      sink: sink-operator
+    slot-sharing-group:
+      source: consumer-group
+      process: process-group
+      sink: sink-group
+    checkpoint:
+      data-dir: /opt/sojourner-ubd/checkpoint
+      interval-ms: 300000
+      timeout-ms: 900000
+      min-pause-between-ms: 120000
+      max-concurrent: 1
+      tolerate-failure-number: 3
+
+rheos:
+  registry-url: https://rheos-services.stratus.ebay.com
+  client:
+    id: "urn:ebay-marketplace-consumerid:68a97ac2-013b-4915-9ed7-d6ae2ff01618"
+    iaf:
+      secret: c4bb6fca-7ac5-46dd-b218-a49cb6307dbc
+      env: production
+
+hdfs:
+  dump:
+    path:
+      open_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unified_session_dump_w_test/category=open/type=nonbot
+      sameday_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unified_session_dump_w_test/category=sameday/type=nonbot
+      crossday_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unified_session_dump_w_test/category=crossday/type=nonbot
+      watermark_nonbot: hdfs://apollo-router/sys/edw/working/ubi/ubi_w/soj/stg_unisession_watermark_w_test/type=nonbot

@@ -11,6 +11,7 @@ import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.connectors.kafka.KafkaDeserializationSchema;
 
+import static com.ebay.epic.sojourner.common.constant.Constants.DOMAIN_DEL;
 import static com.ebay.epic.sojourner.common.env.FlinkEnvUtils.getInteger;
 
 public class SourceDataStreamBuilder<T> {
@@ -45,7 +46,12 @@ public class SourceDataStreamBuilder<T> {
     }
 
     public SourceDataStreamBuilder<T> uid(String uid) {
-        this.uid = configManager.getOPUid(uid);
+        this.uid = configManager.getOPUid(uid)+DOMAIN_DEL+ dc;
+        return this;
+    }
+
+    public SourceDataStreamBuilder<T> uidWithDC(String uid) {
+        this.uid = configManager.getOPUid(uid)+DOMAIN_DEL+ dc;
         return this;
     }
 
@@ -79,19 +85,24 @@ public class SourceDataStreamBuilder<T> {
     }
     public DataStream<T> build(KafkaDeserializationSchema<T> schema) {
         Preconditions.checkNotNull(dc);
-        return this.build(schema, dc, operatorName, parallelism, uid, slotGroup, rescaled);
+        return this.build(schema, dc, operatorName, parallelism, uid, slotGroup, rescaled,false);
+    }
+
+    public DataStream<T> build(KafkaDeserializationSchema<T> schema, boolean isSSL) {
+        Preconditions.checkNotNull(dc);
+        return this.build(schema, dc, operatorName, parallelism, uid, slotGroup, rescaled,isSSL);
     }
 
     public DataStream<T> buildRescaled(KafkaDeserializationSchema<T> schema) {
         Preconditions.checkNotNull(dc);
-        return this.build(schema, dc, operatorName, parallelism, uid, slotGroup, true);
+        return this.build(schema, dc, operatorName, parallelism, uid, slotGroup, true,false);
     }
 
     public DataStream<T> build(KafkaDeserializationSchema<T> schema, DataCenter dc,
                                String operatorName, int parallelism, String uid, String slotGroup,
-                               boolean rescaled) {
+                               boolean rescaled,boolean isSSL) {
         Preconditions.checkNotNull(dc);
-        KafkaConsumerConfig config = KafkaConsumerConfig.build(dc);
+        KafkaConsumerConfig config = KafkaConsumerConfig.build(dc,isSSL);
         FlinkKafkaSourceConfigWrapper configWrapper = new FlinkKafkaSourceConfigWrapper(
                 config, outOfOrderlessInMin, idleSourceTimeout, fromTimestamp);
         FlinkKafkaConsumerFactory factory = new FlinkKafkaConsumerFactory(configWrapper);

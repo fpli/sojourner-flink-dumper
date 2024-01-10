@@ -3,10 +3,9 @@ package com.ebay.epic.sojourner.flink.connectors.kafka.factory;
 import com.ebay.epic.sojourner.flink.connectors.kafka.assigner.SojSerializableTimestampAssigner;
 import com.ebay.epic.sojourner.flink.connectors.kafka.config.FlinkKafkaSourceConfigWrapper;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
 import org.apache.flink.streaming.connectors.kafka.KafkaDeserializationSchema;
-import org.apache.flink.streaming.connectors.kafka.SojFlinkKafkaConsumer;
 
 import java.time.Duration;
 
@@ -19,8 +18,8 @@ public class FlinkKafkaConsumerFactory {
         this.configWrapper = configWrapper;
     }
 
-    public <T> SojFlinkKafkaConsumer<T> get(KafkaDeserializationSchema<T> deserializer) {
-        SojFlinkKafkaConsumer<T> flinkKafkaConsumer = new SojFlinkKafkaConsumer<>(
+    public <T> FlinkKafkaConsumer<T> get(KafkaDeserializationSchema<T> deserializer) {
+        FlinkKafkaConsumer<T> flinkKafkaConsumer = new FlinkKafkaConsumer<>(
                 configWrapper.getKafkaConsumerConfig().getTopics(),
                 deserializer,
                 configWrapper.getKafkaConsumerConfig().getProperties());

@@ -1,5 +1,6 @@
 package com.ebay.epic.sojourner.utils;
 
+import com.ebay.epic.sojourner.common.model.AkamaiLog;
 import com.ebay.epic.sojourner.common.model.UniSession;
 import model.*;
 
@@ -28,7 +29,10 @@ public class TimestampFieldExtractor {
     } else if (t instanceof UniSession) {
       UniSession uniSession = (UniSession) t;
       return uniSession.getSessionStartDt();
-    }   else {
+    } else if (t instanceof AkamaiLog) {
+      AkamaiLog akamaiLog = (AkamaiLog) t;
+      return akamaiLog.getReqTimeSec();
+    } else {
       throw new IllegalStateException("Cannot extract timestamp filed for generate watermark");
     }
   }

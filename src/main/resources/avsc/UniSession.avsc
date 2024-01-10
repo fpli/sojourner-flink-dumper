@@ -58,7 +58,6 @@
       ],
       "doc": "from unisession globalSessionId"
     },
-
     {
       "name": "absStartTimestamp",
       "type": [
@@ -67,7 +66,6 @@
       ],
       "doc": "from unisession absStartTimestamp"
     },
-
     {
       "name": "absEndTimestamp",
       "type": [
@@ -76,7 +74,6 @@
       ],
       "doc": "from unisession absEndTimestamp"
     },
-
     {
       "name": "sessionStartDt",
       "type": [
@@ -94,8 +91,24 @@
       "doc": "traffic source"
     },
     {
+      "name": "trafficSourceDetails",
+      "type": [
+        "null",
+        {
+          "type": "map",
+          "values": [
+            "null",
+            "string"
+          ],
+          "default": {}
+        }
+      ],
+      "doc": ""
+    },
+    {
       "name": "ubiSessIds",
-      "type": [ "null",
+      "type": [
+        "null",
         {
           "type": "array",
           "items": "string"
@@ -104,17 +117,18 @@
     },
     {
       "name": "ubiSessSkeys",
-      "type": [ "null",
+      "type": [
+        "null",
         {
           "type": "array",
           "items": "long"
         }
       ]
-
     },
     {
       "name": "autotrackSessIds",
-      "type": [ "null",
+      "type": [
+        "null",
         {
           "type": "array",
           "items": "long"
@@ -123,7 +137,8 @@
     },
     {
       "name": "autotrackSessSkeys",
-      "type": [ "null",
+      "type": [
+        "null",
         {
           "type": "array",
           "items": "long"
@@ -183,6 +198,153 @@
         "boolean"
       ],
       "doc": "to identify open or end"
+    },
+    {
+      "name": "userId",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "from ubisession",
+      "default": null
+    },
+    {
+      "name": "firstAppId",
+      "type": [
+        "null",
+        "int"
+      ],
+      "doc": "from ubisession",
+      "default": null
+    },
+    {
+      "name": "cobrand",
+      "type": [
+        "null",
+        "int"
+      ],
+      "doc": "from ubisession ",
+      "default": null
+    },
+    {
+      "name": "userAgent",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "from ubisession",
+      "default": null
+    },
+    {
+      "name": "experience",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "from ubisession",
+      "default": null
+    },
+    {
+      "name": "experienceLevel1",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "from ubisession",
+      "default": null
+    },
+    {
+      "name": "experienceLevel2",
+      "type": [
+        "null",
+        "string"
+      ],
+      "doc": "from ubisession",
+      "default": null
+    },
+    {
+      "name": "clavSessions",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "record",
+            "name": "ClavSession",
+            "fields": [
+              {
+                "name": "sessionId",
+                "type": "string"
+              },
+              {
+                "name": "siteId",
+                "type": "int"
+              },
+              {
+                "name": "botFlag",
+                "type": "long"
+              },
+              {
+                "name": "validPageCount",
+                "type": "int"
+              },
+              {
+                "name": "duration",
+                "type": "long"
+              },
+              {
+                "name": "startPageId",
+                "type": "int"
+              },
+              {
+                "name": "exitPageId",
+                "type": "int"
+              },
+              {
+                "name": "startTimestamp",
+                "type": "long"
+              },
+              {
+                "name": "exitTimestamp",
+                "type": "long"
+              },
+              {
+                "name": "grCount",
+                "type": "int"
+              },
+              {
+                "name": "gr1Count",
+                "type": "int"
+              },
+              {
+                "name": "homepageCount",
+                "type": "int"
+              },
+              {
+                "name": "viCount",
+                "type": "int"
+              },
+              {
+                "name": "signinCount",
+                "type": "int"
+              },
+              {
+                "name": "myebayCount",
+                "type": "int"
+              },
+              {
+                "name": "others",
+                "type": {
+                  "type": "map",
+                  "values": "string"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "doc": "from ubisession",
+      "default": null
     }
   ]
 }
