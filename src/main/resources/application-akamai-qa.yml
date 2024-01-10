@@ -1,0 +1,68 @@
+kafka:
+  consumer:
+    topic:
+      - marketing.tracking.staging.akamailog.event
+    group-id: akamai-dumper-qatest
+    bootstrap-servers:
+      lvs:
+        - rhs-nbnaniaa-kfk-1.rheos-streaming-qa.stratus.qa.ebay.com:9092
+        - rhs-nbnaniaa-kfk-2.rheos-streaming-qa.stratus.qa.ebay.com:9092
+        - rhs-nbnaniaa-kfk-3.rheos-streaming-qa.stratus.qa.ebay.com:9092
+        - rhs-nbnaniaa-kfk-4.rheos-streaming-qa.stratus.qa.ebay.com:9092
+    max-poll-records: 3000
+    # 16MB, default value is 50MB
+    fetch-max-bytes: 16777216
+    # 128KB, default value is 64KB
+    receive-buffer: 131072
+    fetch-max-wait-ms: 100
+    # 4MB, default value is 1MB
+    max-partitions-fetch-bytes: 4194304
+    auto-offset-reset: earliest
+    # 60s, default is disabled
+    partition-discovery-interval-ms: 60000
+
+flink:
+  app:
+    name: Akamai Log dumper Pipeline
+    parallelism:
+      source: 10
+      process: 10
+      sink:
+        hdfs:
+          akamai_event: 10
+          akamai_watermark: 10
+    operator-name:
+      assgin-watermark: Akamai Log Watermark Assign
+      extract-watermark: Akamai Log Timestamp Extract
+      sink:
+        event: Akamai Log Dumper Sink
+        watermark: Akamai Log Watermark Sink
+    uid:
+      assgin-watermark: akamai-log-watermak-assign
+      extract-watermark: akamai-log-timestamp-extract
+      sink:
+        event: akamai-log-dumper-sink
+        watermark: akamai-log-watermark-sink
+    metric:
+      watermark-process-progress: sojourner-ubd-akamai-log-watermark-delay-time
+    checkpoint:
+      data-dir: /tmp/flink/akamai/checkpoint
+    source:
+      from-timestamp: earliest
+      dc: lvs
+
+hdfs:
+  dump:
+    path:
+      akamai_event: /tmp/flink/akamai/event
+      akamai_watermark: /tmp/flink/akamai/watermark
+
+rheos:
+  registry-url: https://rheos-services.qa.ebay.com
+  client:
+    id: "urn:ebay-marketplace-consumerid:68a97ac2-013b-4915-9ed7-d6ae2ff01618"
+    iaf:
+      secret: 6218c197-200e-49d7-b404-2a4dbf7595ef
+      env: staging
+
+
