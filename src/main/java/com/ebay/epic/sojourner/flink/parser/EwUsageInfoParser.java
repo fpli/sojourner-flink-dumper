@@ -27,6 +27,7 @@ public class EwUsageInfoParser implements FieldParser<GenericRecord, AkamaiLog> 
   @Override
   public void parse(GenericRecord record, AkamaiLog akamaiLog) throws Exception {
     if (record.get("ewUsageInfo") == null) {
+      log.warn(record.toString());
       return;
     }
 
