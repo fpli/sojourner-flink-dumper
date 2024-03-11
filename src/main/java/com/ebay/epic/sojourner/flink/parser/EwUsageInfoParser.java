@@ -26,6 +26,10 @@ public class EwUsageInfoParser implements FieldParser<GenericRecord, AkamaiLog> 
 
   @Override
   public void parse(GenericRecord record, AkamaiLog akamaiLog) throws Exception {
+    if (record.get("ewUsageInfo") == null) {
+      return;
+    }
+
     Map<String, String> ewUsageInfo = new HashMap<>();
     String rawData = ((Utf8) record.get("ewUsageInfo")).toString();
     log.trace("previous ewUsageInfo:" + rawData);
