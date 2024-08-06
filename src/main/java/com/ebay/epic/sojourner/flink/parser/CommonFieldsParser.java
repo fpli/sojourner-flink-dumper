@@ -161,5 +161,7 @@ public class CommonFieldsParser implements FieldParser<GenericRecord, AkamaiLog>
         akamaiLog.setAsn(asn.toString());
     }
 
+    String breadcrumbs = record.get("breadcrumbs") == null ? "" : ((Utf8) record.get("breadcrumbs")).toString();
+    akamaiLog.setBreadcrumbs("-".equals(breadcrumbs) ? null : breadcrumbs);
   }
 }

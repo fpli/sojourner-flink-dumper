@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 /** Akamai Log schema */
 @org.apache.avro.specific.AvroGenerated
 public class AkamaiLog extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 885724122167727948L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"AkamaiLog\",\"namespace\":\"com.ebay.epic.sojourner.common.model\",\"doc\":\"Akamai Log schema\",\"fields\":[{\"name\":\"version\",\"type\":[\"int\",\"null\"]},{\"name\":\"ewUsageInfo\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"}},{\"name\":\"ewExecutionInfo\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"}},{\"name\":\"country\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"city\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"state\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"cacheStatus\",\"type\":[\"int\",\"null\"]},{\"name\":\"customField\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"turnAroundTimeMSec\",\"type\":[\"int\",\"null\"]},{\"name\":\"transferTimeMSec\",\"type\":[\"int\",\"null\"]},{\"name\":\"cliIP\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"statusCode\",\"type\":[\"int\",\"null\"]},{\"name\":\"reqHost\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"reqMethod\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"bytes\",\"type\":[\"int\",\"null\"]},{\"name\":\"tlsVersion\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"UA\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"queryStr\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"rspContentLen\",\"type\":[\"int\",\"null\"]},{\"name\":\"rspContentType\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"reqPath\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"reqPort\",\"type\":[\"int\",\"null\"]},{\"name\":\"proto\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"reqTimeSec\",\"type\":[\"long\",\"null\"]},{\"name\":\"reqTimeSecStr\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"cp\",\"type\":[\"int\",\"null\"]},{\"name\":\"reqId\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"tlsOverheadTimeMSec\",\"type\":[\"int\",\"null\"]},{\"name\":\"objSize\",\"type\":[\"int\",\"null\"]},{\"name\":\"uncompressedSize\",\"type\":[\"int\",\"null\"]},{\"name\":\"overheadBytes\",\"type\":[\"int\",\"null\"]},{\"name\":\"totalBytes\",\"type\":[\"int\",\"null\"]},{\"name\":\"accLang\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"cookie\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"range\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"referer\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"xForwardedFor\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"maxAgeSec\",\"type\":[\"int\",\"null\"]},{\"name\":\"reqEndTimeMSec\",\"type\":[\"int\",\"null\"]},{\"name\":\"errorCode\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"dnsLookupTimeMSec\",\"type\":[\"int\",\"null\"]},{\"name\":\"billingRegion\",\"type\":[\"int\",\"null\"]},{\"name\":\"edgeIP\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"securityRules\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"serverCountry\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"streamId\",\"type\":[\"int\",\"null\"]},{\"name\":\"asn\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]}]}");
+  private static final long serialVersionUID = 5194608521867523696L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"AkamaiLog\",\"namespace\":\"com.ebay.epic.sojourner.common.model\",\"doc\":\"Akamai Log schema\",\"fields\":[{\"name\":\"version\",\"type\":[\"int\",\"null\"]},{\"name\":\"ewUsageInfo\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"}},{\"name\":\"ewExecutionInfo\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"avro.java.string\":\"String\"}},{\"name\":\"country\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"city\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"state\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"cacheStatus\",\"type\":[\"int\",\"null\"]},{\"name\":\"customField\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"turnAroundTimeMSec\",\"type\":[\"int\",\"null\"]},{\"name\":\"transferTimeMSec\",\"type\":[\"int\",\"null\"]},{\"name\":\"cliIP\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"statusCode\",\"type\":[\"int\",\"null\"]},{\"name\":\"reqHost\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"reqMethod\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"bytes\",\"type\":[\"int\",\"null\"]},{\"name\":\"tlsVersion\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"UA\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"queryStr\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"rspContentLen\",\"type\":[\"int\",\"null\"]},{\"name\":\"rspContentType\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"reqPath\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"reqPort\",\"type\":[\"int\",\"null\"]},{\"name\":\"proto\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"reqTimeSec\",\"type\":[\"long\",\"null\"]},{\"name\":\"reqTimeSecStr\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"cp\",\"type\":[\"int\",\"null\"]},{\"name\":\"reqId\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"tlsOverheadTimeMSec\",\"type\":[\"int\",\"null\"]},{\"name\":\"objSize\",\"type\":[\"int\",\"null\"]},{\"name\":\"uncompressedSize\",\"type\":[\"int\",\"null\"]},{\"name\":\"overheadBytes\",\"type\":[\"int\",\"null\"]},{\"name\":\"totalBytes\",\"type\":[\"int\",\"null\"]},{\"name\":\"accLang\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"cookie\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"range\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"referer\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"xForwardedFor\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"maxAgeSec\",\"type\":[\"int\",\"null\"]},{\"name\":\"reqEndTimeMSec\",\"type\":[\"int\",\"null\"]},{\"name\":\"errorCode\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"dnsLookupTimeMSec\",\"type\":[\"int\",\"null\"]},{\"name\":\"billingRegion\",\"type\":[\"int\",\"null\"]},{\"name\":\"edgeIP\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"securityRules\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"serverCountry\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"streamId\",\"type\":[\"int\",\"null\"]},{\"name\":\"asn\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"breadcrumbs\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -99,6 +99,7 @@ public class AkamaiLog extends org.apache.avro.specific.SpecificRecordBase imple
   @Deprecated public java.lang.String serverCountry;
   @Deprecated public java.lang.Integer streamId;
   @Deprecated public java.lang.String asn;
+  @Deprecated public java.lang.String breadcrumbs;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -156,8 +157,9 @@ public class AkamaiLog extends org.apache.avro.specific.SpecificRecordBase imple
    * @param serverCountry The new value for serverCountry
    * @param streamId The new value for streamId
    * @param asn The new value for asn
+   * @param breadcrumbs The new value for breadcrumbs
    */
-  public AkamaiLog(java.lang.Integer version, java.util.Map<java.lang.String,java.lang.String> ewUsageInfo, java.util.Map<java.lang.String,java.lang.String> ewExecutionInfo, java.lang.String country, java.lang.String city, java.lang.String state, java.lang.Integer cacheStatus, java.lang.String customField, java.lang.Integer turnAroundTimeMSec, java.lang.Integer transferTimeMSec, java.lang.String cliIP, java.lang.Integer statusCode, java.lang.String reqHost, java.lang.String reqMethod, java.lang.Integer bytes, java.lang.String tlsVersion, java.lang.String UA, java.lang.String queryStr, java.lang.Integer rspContentLen, java.lang.String rspContentType, java.lang.String reqPath, java.lang.Integer reqPort, java.lang.String proto, java.lang.Long reqTimeSec, java.lang.String reqTimeSecStr, java.lang.Integer cp, java.lang.String reqId, java.lang.Integer tlsOverheadTimeMSec, java.lang.Integer objSize, java.lang.Integer uncompressedSize, java.lang.Integer overheadBytes, java.lang.Integer totalBytes, java.lang.String accLang, java.lang.String cookie, java.lang.String range, java.lang.String referer, java.lang.String xForwardedFor, java.lang.Integer maxAgeSec, java.lang.Integer reqEndTimeMSec, java.lang.String errorCode, java.lang.Integer dnsLookupTimeMSec, java.lang.Integer billingRegion, java.lang.String edgeIP, java.lang.String securityRules, java.lang.String serverCountry, java.lang.Integer streamId, java.lang.String asn) {
+  public AkamaiLog(java.lang.Integer version, java.util.Map<java.lang.String,java.lang.String> ewUsageInfo, java.util.Map<java.lang.String,java.lang.String> ewExecutionInfo, java.lang.String country, java.lang.String city, java.lang.String state, java.lang.Integer cacheStatus, java.lang.String customField, java.lang.Integer turnAroundTimeMSec, java.lang.Integer transferTimeMSec, java.lang.String cliIP, java.lang.Integer statusCode, java.lang.String reqHost, java.lang.String reqMethod, java.lang.Integer bytes, java.lang.String tlsVersion, java.lang.String UA, java.lang.String queryStr, java.lang.Integer rspContentLen, java.lang.String rspContentType, java.lang.String reqPath, java.lang.Integer reqPort, java.lang.String proto, java.lang.Long reqTimeSec, java.lang.String reqTimeSecStr, java.lang.Integer cp, java.lang.String reqId, java.lang.Integer tlsOverheadTimeMSec, java.lang.Integer objSize, java.lang.Integer uncompressedSize, java.lang.Integer overheadBytes, java.lang.Integer totalBytes, java.lang.String accLang, java.lang.String cookie, java.lang.String range, java.lang.String referer, java.lang.String xForwardedFor, java.lang.Integer maxAgeSec, java.lang.Integer reqEndTimeMSec, java.lang.String errorCode, java.lang.Integer dnsLookupTimeMSec, java.lang.Integer billingRegion, java.lang.String edgeIP, java.lang.String securityRules, java.lang.String serverCountry, java.lang.Integer streamId, java.lang.String asn, java.lang.String breadcrumbs) {
     this.version = version;
     this.ewUsageInfo = ewUsageInfo;
     this.ewExecutionInfo = ewExecutionInfo;
@@ -205,6 +207,7 @@ public class AkamaiLog extends org.apache.avro.specific.SpecificRecordBase imple
     this.serverCountry = serverCountry;
     this.streamId = streamId;
     this.asn = asn;
+    this.breadcrumbs = breadcrumbs;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -258,6 +261,7 @@ public class AkamaiLog extends org.apache.avro.specific.SpecificRecordBase imple
     case 44: return serverCountry;
     case 45: return streamId;
     case 46: return asn;
+    case 47: return breadcrumbs;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -313,6 +317,7 @@ public class AkamaiLog extends org.apache.avro.specific.SpecificRecordBase imple
     case 44: serverCountry = (java.lang.String)value$; break;
     case 45: streamId = (java.lang.Integer)value$; break;
     case 46: asn = (java.lang.String)value$; break;
+    case 47: breadcrumbs = (java.lang.String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -1070,6 +1075,22 @@ public class AkamaiLog extends org.apache.avro.specific.SpecificRecordBase imple
   }
 
   /**
+   * Gets the value of the 'breadcrumbs' field.
+   * @return The value of the 'breadcrumbs' field.
+   */
+  public java.lang.String getBreadcrumbs() {
+    return breadcrumbs;
+  }
+
+  /**
+   * Sets the value of the 'breadcrumbs' field.
+   * @param value the value to set.
+   */
+  public void setBreadcrumbs(java.lang.String value) {
+    this.breadcrumbs = value;
+  }
+
+  /**
    * Creates a new AkamaiLog RecordBuilder.
    * @return A new AkamaiLog RecordBuilder
    */
@@ -1148,6 +1169,7 @@ public class AkamaiLog extends org.apache.avro.specific.SpecificRecordBase imple
     private java.lang.String serverCountry;
     private java.lang.Integer streamId;
     private java.lang.String asn;
+    private java.lang.String breadcrumbs;
 
     /** Creates a new Builder */
     private Builder() {
@@ -1348,6 +1370,10 @@ public class AkamaiLog extends org.apache.avro.specific.SpecificRecordBase imple
         this.asn = data().deepCopy(fields()[46].schema(), other.asn);
         fieldSetFlags()[46] = true;
       }
+      if (isValidValue(fields()[47], other.breadcrumbs)) {
+        this.breadcrumbs = data().deepCopy(fields()[47].schema(), other.breadcrumbs);
+        fieldSetFlags()[47] = true;
+      }
     }
 
     /**
@@ -1543,6 +1569,10 @@ public class AkamaiLog extends org.apache.avro.specific.SpecificRecordBase imple
       if (isValidValue(fields()[46], other.asn)) {
         this.asn = data().deepCopy(fields()[46].schema(), other.asn);
         fieldSetFlags()[46] = true;
+      }
+      if (isValidValue(fields()[47], other.breadcrumbs)) {
+        this.breadcrumbs = data().deepCopy(fields()[47].schema(), other.breadcrumbs);
+        fieldSetFlags()[47] = true;
       }
     }
 
@@ -3379,6 +3409,45 @@ public class AkamaiLog extends org.apache.avro.specific.SpecificRecordBase imple
       return this;
     }
 
+    /**
+      * Gets the value of the 'breadcrumbs' field.
+      * @return The value.
+      */
+    public java.lang.String getBreadcrumbs() {
+      return breadcrumbs;
+    }
+
+    /**
+      * Sets the value of the 'breadcrumbs' field.
+      * @param value The value of 'breadcrumbs'.
+      * @return This builder.
+      */
+    public com.ebay.epic.sojourner.common.model.AkamaiLog.Builder setBreadcrumbs(java.lang.String value) {
+      validate(fields()[47], value);
+      this.breadcrumbs = value;
+      fieldSetFlags()[47] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'breadcrumbs' field has been set.
+      * @return True if the 'breadcrumbs' field has been set, false otherwise.
+      */
+    public boolean hasBreadcrumbs() {
+      return fieldSetFlags()[47];
+    }
+
+
+    /**
+      * Clears the value of the 'breadcrumbs' field.
+      * @return This builder.
+      */
+    public com.ebay.epic.sojourner.common.model.AkamaiLog.Builder clearBreadcrumbs() {
+      breadcrumbs = null;
+      fieldSetFlags()[47] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public AkamaiLog build() {
@@ -3431,6 +3500,7 @@ public class AkamaiLog extends org.apache.avro.specific.SpecificRecordBase imple
         record.serverCountry = fieldSetFlags()[44] ? this.serverCountry : (java.lang.String) defaultValue(fields()[44]);
         record.streamId = fieldSetFlags()[45] ? this.streamId : (java.lang.Integer) defaultValue(fields()[45]);
         record.asn = fieldSetFlags()[46] ? this.asn : (java.lang.String) defaultValue(fields()[46]);
+        record.breadcrumbs = fieldSetFlags()[47] ? this.breadcrumbs : (java.lang.String) defaultValue(fields()[47]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

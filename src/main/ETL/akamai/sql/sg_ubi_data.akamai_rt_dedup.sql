@@ -49,6 +49,7 @@ SELECT
      , serverCountry
      , streamId
      , asn
+     , breadcrumbs
      , row_number() OVER (PARTITION BY
     version
     , sojlib.soj_map_to_str(ewUsageInfo)
@@ -96,6 +97,7 @@ SELECT
     , serverCountry
     , streamId
     , asn
+    , breadcrumbs
     ORDER BY reqTimeSec DESC) AS row_number
 FROM ubi_w.stg_event_akamai_bot_w
 WHERE dt = '${UOW_FROM_DATE}'
@@ -150,6 +152,7 @@ SELECT
      , serverCountry
      , streamId
      , asn
+     , breadcrumbs
 FROM akamai_dedup_v e
 WHERE row_number = 1
 ;
@@ -202,6 +205,7 @@ SELECT
      , serverCountry
      , streamId
      , asn
+     , breadcrumbs
 FROM akamai_rt_dedup_v
     CLUSTER BY reqTimeSec, reqId
 ;
