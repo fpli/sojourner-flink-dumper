@@ -209,3 +209,65 @@ SELECT
 FROM akamai_rt_dedup_v
     CLUSTER BY reqTimeSec, reqId
 ;
+
+
+DROP VIEW IF EXISTS UBI_V.AKAMAI_EVENT_BOT;
+create view UBI_V.AKAMAI_EVENT_BOT as
+select
+  version,
+  ewUsageInfo,
+  ewExecutionInfo,
+  country,
+  city,
+  state,
+  cacheStatus,
+  customField,
+  turnaroundTimeMSec,
+  transferTimeMSec,
+  cliIp,
+  statusCode,
+  reqHost,
+  reqMethod,
+  bytes,
+  tlsVersion,
+  UA,
+  queryStr,
+  rspContentLen,
+  rspContentType,
+  reqPath,
+  reqPort,
+  proto,
+  reqTimeSec,
+  to_timestamp(
+    concat(
+      from_unixtime(reqTimeSec / 1000, 'yyyy-MM-dd HH:mm:ss'),
+      '.',
+      substr(reqTimeSec, -3)
+    )
+  ) as reqTime,
+  cp,
+  reqId,
+  tlsOverheadTimeMSec,
+  objSize,
+  uncompressedSize,
+  overheadBytes,
+  totalBytes,
+  accLang,
+  cookie,
+  range,
+  referer,
+  xForwardedFor,
+  maxAgeSec,
+  reqEndTimeMSec,
+  errorCode,
+  dnsLookupTimeMSec,
+  billingRegion,
+  edgeip,
+  securityRules,
+  serverCountry,
+  streamId,
+  asn,
+  breadcrumbs,
+  dt
+from
+  UBI_T.AKAMAI_EVENT_BOT_ODS;
